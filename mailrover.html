@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MailRover autonomous parcel-delivery robot engineering portfolio project.">
+  <title>MailRover | Simon Amanuel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mail-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Simon Amanuel</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Projects</a>
+        <a href="#role">My Role</a>
+        <a href="#proof">Testing</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <header class="mail-hero">
+      <div class="container mail-hero-grid">
+        <div class="mail-hero-copy">
+          <div class="eyebrow">Engineering Capstone · 2026</div>
+          <h1>MailRover</h1>
+          <p class="mail-lead">An autonomous indoor robot built to move a secured parcel from a front desk to a recipient without manual driving.</p>
+
+          <div class="mail-role-line">
+            <span>My role</span>
+            <strong>CTO — Web Application, Electronics, Power &amp; Systems Integration</strong>
+          </div>
+
+          <div class="tags">
+            <span class="tag">Flask</span>
+            <span class="tag">ROS 2</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Embedded Electronics</span>
+            <span class="tag">DC Power &amp; Wiring</span>
+            <span class="tag">System Integration</span>
+          </div>
+          <a class="button primary mail-hero-demo" href="#final-demo">Watch Final Demo ↓</a>
+        </div>
+
+        <div class="mail-hero-media">
+          <div class="mail-orbit mail-orbit-a"></div>
+          <div class="mail-orbit mail-orbit-b"></div>
+          <img src="assets/mailrover-robot.jpg" alt="MailRover autonomous parcel delivery robot">
+          <div class="mail-float-card">
+            <span>End-to-end system</span>
+            <strong>Web → Navigation → Locker</strong>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="mail-overview">
+      <div class="container mail-overview-grid">
+        <div>
+          <div class="eyebrow">What We Built</div>
+          <h2>A complete parcel-delivery workflow, not just a moving robot.</h2>
+        </div>
+        <div class="mail-overview-copy">
+          <p>Staff could register and dispatch a parcel through the web interface. The robot then navigated to a predefined destination, responded to obstacles, and kept the parcel locked until the recipient entered the correct PIN.</p>
+        </div>
+      </div>
+
+      <div class="container mail-flow">
+        <div class="mail-flow-step"><span>01</span><strong>Load</strong><small>Register the parcel</small></div>
+        <div class="mail-flow-line"></div>
+        <div class="mail-flow-step"><span>02</span><strong>Dispatch</strong><small>Send the delivery task</small></div>
+        <div class="mail-flow-line"></div>
+        <div class="mail-flow-step"><span>03</span><strong>Navigate</strong><small>Travel autonomously</small></div>
+        <div class="mail-flow-line"></div>
+        <div class="mail-flow-step"><span>04</span><strong>Unlock</strong><small>Release after PIN verification</small></div>
+      </div>
+    </section>
+
+    <section id="role" class="mail-role-section">
+      <div class="container">
+        <div class="mail-section-head">
+          <div>
+            <div class="eyebrow">My Engineering Role</div>
+            <h2>I worked where software, electrical hardware and the physical robot met.</h2>
+          </div>
+          <p>My work connected the user workflow to navigation, low-voltage electrical subsystems and real hardware.</p>
+        </div>
+
+        <div class="mail-role-grid">
+          <article class="mail-role-card featured">
+            <span class="mail-num">01</span>
+            <h3>Web Application</h3>
+            <p>Built the staff and recipient interfaces for creating deliveries, tracking progress and retrieving parcels.</p>
+            <div class="mail-mini-tags"><span>Flask</span><span>UI</span><span>Workflow</span></div>
+          </article>
+
+          <article class="mail-role-card">
+            <span class="mail-num">02</span>
+            <h3>Robot Integration</h3>
+            <p>Connected delivery requests from the web application to ROS 2 navigation tasks on the robot.</p>
+          </article>
+
+          <article class="mail-role-card">
+            <span class="mail-num">03</span>
+            <h3>Locker Electronics</h3>
+            <p>Implemented the control path from successful PIN verification to Raspberry Pi GPIO and the electronic parcel lock.</p>
+          </article>
+
+          <article class="mail-role-card">
+            <span class="mail-num">04</span>
+            <h3>System Testing</h3>
+            <p>Integrated and debugged the full workflow across software, navigation and hardware before final verification.</p>
+          </article>
+        </div>
+
+        <div class="project-evidence-callout mail-power-callout">
+          <div>
+            <span>Electrical power integration</span>
+            <h3>Powering and wiring a complete mobile robot.</h3>
+          </div>
+          <div>
+            <p>I contributed to the robot’s low-voltage electrical integration: connecting the battery-powered subsystems, wiring the Raspberry Pi, motor controller, sensors and locker electronics, and debugging power delivery as the complete system came together.</p>
+            <ul>
+              <li>Battery capacity and eight-hour runtime requirement</li>
+              <li>Stable DC distribution to motors, controller, LiDAR, sensors and locker</li>
+              <li>Wire-gauge and regulator troubleshooting for the Raspberry Pi</li>
+              <li>Protected wiring, reliable connectors and integrated-system verification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mail-ui-section">
+      <div class="container">
+        <div class="mail-section-head">
+          <div>
+            <div class="eyebrow">Product Interface</div>
+            <h2>The robot was controlled through a simple browser workflow.</h2>
+          </div>
+          <p>The interface made the engineering system usable by staff and recipients without exposing the underlying robot software.</p>
+        </div>
+
+        <div class="mail-ui-gallery">
+          <figure class="mail-screen">
+            <img src="assets/mailrover-intake.png" alt="MailRover front desk intake interface">
+            <figcaption><strong>Create Delivery</strong><span>Register the parcel and destination.</span></figcaption>
+          </figure>
+          <figure class="mail-screen raised">
+            <img src="assets/mailrover-tracking.png" alt="MailRover delivery tracking interface">
+            <figcaption><strong>Track Progress</strong><span>Follow the active delivery state.</span></figcaption>
+          </figure>
+          <figure class="mail-screen">
+            <img src="assets/mailrover-unlock.png" alt="MailRover secure PIN unlock interface">
+            <figcaption><strong>Secure Retrieval</strong><span>Unlock only after valid PIN entry.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="mail-proof">
+      <div class="container">
+        <div class="mail-section-head">
+          <div>
+            <div class="eyebrow">Testing &amp; Result</div>
+            <h2>Verified as one integrated system.</h2>
+          </div>
+          <p>Testing focused on whether the complete delivery experience worked from dispatch through secure retrieval.</p>
+        </div>
+
+        <div class="mail-proof-grid">
+          <div class="mail-proof-item"><span>✓</span><div><strong>Autonomous Delivery</strong><p>Reached predefined destinations without manual steering.</p></div></div>
+          <div class="mail-proof-item"><span>✓</span><div><strong>Obstacle Response</strong><p>Detected unexpected obstacles and reacted before contact.</p></div></div>
+          <div class="mail-proof-item"><span>✓</span><div><strong>Secure Parcel Access</strong><p>Kept the locker secured until successful PIN verification.</p></div></div>
+          <div class="mail-proof-item"><span>✓</span><div><strong>End-to-End Workflow</strong><p>Web interface, navigation and locker control worked together in the final demonstration.</p></div></div>
+        </div>
+
+        <div class="mail-evolution-head">
+          <div>
+            <div class="eyebrow">Prototype Evolution</div>
+            <h3>Movement, mapping, physical design—then the finished product.</h3>
+          </div>
+          <p>This sequence shows both sides of the project’s development: how the robot learned to move and understand its surroundings, and how the physical build became a complete delivery system.</p>
+        </div>
+
+        <div class="mail-progress-track" aria-label="MailRover development progression">
+          <span>Initial drive</span><i>→</i><span>Stable mobility</span><i>→</i><span>Live mapping</span><i>→</i><span>Integrated design</span><i>→</i><strong>Final system</strong>
+        </div>
+
+        <article id="final-demo" class="mail-video-card featured mail-final-demo mail-final-first">
+          <div class="mail-video-frame">
+            <video controls playsinline preload="metadata" poster="assets/mailrover-final-team.jpeg" aria-label="Final Activity 9 MailRover system demonstration">
+              <source src="assets/mailrover-final-demo.mp4" type="video/mp4">
+              <a href="assets/mailrover-final-demo.mp4">Open the final MailRover system demo</a>
+            </video>
+          </div>
+          <div class="mail-video-copy">
+            <span>FINAL DEMO / START HERE</span>
+            <h3>Activity 9: Full System Demonstration</h3>
+            <p>The final end-to-end demonstration of the finished robot, autonomous navigation, browser interface and secure-delivery workflow working together.</p>
+            <a class="button primary mail-final-link" href="assets/mailrover-final-demo.mp4" target="_blank">Open Final Demo Video ↗</a>
+            <small class="mail-video-note">The video is stored inside the portfolio and may take a moment to begin.</small>
+          </div>
+        </article>
+
+        <div class="mail-earlier-head">
+          <span>How it developed</span>
+          <p>After the final demonstration, these milestones show the earlier work in chronological order. YouTube clips open directly on YouTube to avoid local-player errors.</p>
+        </div>
+
+        <div class="mail-video-story mail-video-story-three">
+          <article class="mail-video-card">
+            <a class="mail-youtube-link" href="https://www.youtube.com/watch?v=1IH3lxVNrHs" target="_blank" rel="noopener" aria-label="Watch the initial MailRover driving clip on YouTube">
+              <img src="assets/mailrover-robot.jpg" alt="Earlier MailRover physical prototype associated with the initial driving clip" loading="lazy">
+              <span class="mail-play-badge"><b>▶</b> Watch on YouTube ↗</span>
+            </a>
+            <div class="mail-video-copy">
+              <span>01 / INITIAL DRIVE</span>
+              <h3>First Mobility &amp; Appearance</h3>
+              <p>The earlier YouTube clip shows how the robot first drove and what the initial physical prototype looked like.</p>
+            </div>
+          </article>
+
+          <article class="mail-video-card">
+            <a class="mail-youtube-link mail-local-clip" href="assets/mailrover-mobility-v1.mov" target="_blank" aria-label="Open the first successful MailRover mobility iteration">
+              <img src="assets/mailrover-robot.jpg" alt="MailRover during its first successful mobility iteration">
+              <span class="mail-play-badge"><b>▶</b> Open mobility clip ↗</span>
+            </a>
+            <div class="mail-video-copy">
+              <span>02 / STABLE MOBILITY</span>
+              <h3>First Good Iteration</h3>
+              <p>A more successful mobility run before mapping, delivery software and parcel security were fully integrated.</p>
+            </div>
+          </article>
+
+          <article class="mail-video-card">
+            <a class="mail-youtube-link" href="https://www.youtube.com/watch?v=MNRtYhDxRrw" target="_blank" rel="noopener" aria-label="Watch the MailRover real-time mapping clip on YouTube">
+              <img src="assets/mailrover-mapping-preview.jpg" alt="RViz displaying the map MailRover builds and updates in real time" loading="lazy">
+              <span class="mail-play-badge"><b>▶</b> Watch mapping clip ↗</span>
+            </a>
+            <div class="mail-video-copy">
+              <span>03 / MAPPING ITERATION</span>
+              <h3>Real-Time Map Building</h3>
+              <p>An early navigation milestone showing the robot building and updating its environment map in real time—not the full system demo.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="mail-design-head">
+          <span>04 / PHYSICAL DESIGN</span>
+          <h3>From working prototype to finished product.</h3>
+          <p>The earlier build established the mobile platform. The completed enclosure and integrated system turned it into a recognizable parcel-delivery robot.</p>
+        </div>
+
+        <div class="mail-build-photos">
+          <figure>
+            <img src="assets/mailrover-robot.jpg" alt="MailRover physical prototype moving through a hallway during development" loading="lazy" decoding="async">
+            <figcaption><span>Earlier build</span><strong>Physical prototype on the move</strong><small>The mobile base and parcel enclosure during development.</small></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/mailrover-final-team.jpeg" alt="MailRover team with the completed robot after passing the final demonstration" loading="lazy" decoding="async">
+            <figcaption><span>Demo passed</span><strong>The completed system and team</strong><small>MailRover with the five-person team immediately after the successful final demonstration.</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="mail-team">
+      <div class="container mail-team-grid mail-team-copy-only">
+        <div>
+          <div class="eyebrow">Team Project</div>
+          <h2>Built by a five-person engineering team.</h2>
+          <p>MailRover brought together navigation, software, electronics, mechanical design and system testing into one working prototype.</p>
+          <div class="mail-tech-line"><span>Technical stack</span> Flask · ROS 2 · Raspberry Pi · GPIO · LiDAR · motor/encoder control · battery and DC power distribution · wiring and grounding · solenoid locking</div>
+          <a class="button" href="index.html#projects">Back to Projects →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container small">Simon Amanuel · Engineering Portfolio</div></footer>
+</body>
+</html>
