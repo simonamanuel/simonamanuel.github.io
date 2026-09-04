@@ -609,6 +609,287 @@ section{padding:72px 0;border-top:1px solid rgba(255,255,255,.055)}.section-head
   .mail-build-photos figure:hover,.mail-video-card:hover{transform:none}
 }
 
+/* =========================================
+   Data center networks project
+   ========================================= */
+.home-page .project-bento{
+  grid-template-rows:340px 340px 310px;
+}
+.bento-network{grid-column:1/-1}
+.bento-network .bento-image img{
+  object-fit:cover;
+  object-position:center 55%;
+  filter:saturate(.82) contrast(1.04);
+}
+.bento-network .bento-overlay{
+  background:
+    linear-gradient(90deg,rgba(6,10,15,.98) 0%,rgba(6,10,15,.87) 42%,rgba(6,10,15,.32) 76%,rgba(6,10,15,.13) 100%),
+    linear-gradient(180deg,transparent 30%,rgba(6,10,15,.66) 100%);
+}
+.bento-network .bento-content{max-width:720px}
+
+.network-page{
+  background:
+    radial-gradient(circle at 82% 8%,rgba(255,137,45,.09),transparent 28rem),
+    radial-gradient(circle at 8% 34%,rgba(50,137,214,.08),transparent 25rem),
+    var(--bg);
+}
+.network-page::after{
+  content:"";
+  position:fixed;
+  pointer-events:none;
+  z-index:-1;
+  width:620px;height:620px;
+  right:-330px;bottom:-330px;
+  border:1px solid rgba(255,151,60,.055);
+  border-radius:50%;
+  box-shadow:0 0 0 75px rgba(105,183,255,.012),0 0 0 150px rgba(255,151,60,.008);
+}
+.network-hero{padding:88px 0 54px;overflow:hidden}
+.network-hero-grid{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:clamp(38px,6vw,78px);
+  align-items:center;
+}
+.network-hero h1{
+  margin:13px 0 23px;
+  font-size:clamp(52px,7.4vw,90px);
+  line-height:.95;
+}
+.network-lead{
+  max-width:680px;
+  color:var(--muted);
+  font-size:clamp(18px,2vw,22px);
+}
+.network-role{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  margin-top:24px;
+  padding:14px 0;
+  border-top:1px solid rgba(255,255,255,.09);
+  border-bottom:1px solid rgba(255,255,255,.09);
+  font-size:13px;
+}
+.network-role span{
+  color:#ffad68;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:9px;
+  font-weight:900;
+  padding-top:3px;
+}
+.network-hero-visual{
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:22px;
+  background:#eef3f8;
+  box-shadow:0 34px 80px rgba(0,0,0,.35);
+  transform:rotate(1deg);
+}
+.network-hero-visual img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.network-hero-visual figcaption{
+  padding:13px 16px;
+  background:#101a27;
+  color:#aebdcb;
+  font-size:11px;
+}
+.network-stat-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:52px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:17px;
+  overflow:hidden;
+  background:rgba(255,255,255,.02);
+}
+.network-stat-strip>div{padding:18px 21px}
+.network-stat-strip>div+div{border-left:1px solid rgba(255,255,255,.08)}
+.network-stat-strip strong{display:block;font-size:23px;letter-spacing:-.04em}
+.network-stat-strip span{color:var(--muted);font-size:11px}
+
+.network-overview,.network-method,.network-results,.network-lessons,.network-close{padding:88px 0}
+.network-overview-grid,.network-lessons-grid{
+  display:grid;
+  grid-template-columns:.94fr 1.06fr;
+  gap:clamp(36px,7vw,88px);
+}
+.network-overview-copy{color:var(--muted);font-size:17px}
+.network-overview-copy p:first-child{margin-top:0}
+.network-question-card{
+  margin-top:48px;
+  padding:25px 28px;
+  border:1px solid rgba(255,173,104,.17);
+  border-radius:20px;
+  background:linear-gradient(135deg,rgba(255,151,60,.045),rgba(105,183,255,.035)),var(--panel);
+}
+.network-question-card>span{
+  display:block;
+  color:#ffad68;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin-bottom:15px;
+}
+.network-comparison{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1.2fr;
+  gap:18px;
+  align-items:center;
+}
+.network-comparison>div{display:flex;flex-direction:column}
+.network-comparison strong{font-size:18px}
+.network-comparison small{color:var(--muted)}
+.network-comparison>b{color:#ffad68}
+
+.network-section-head{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:40px;
+  align-items:end;
+  margin-bottom:34px;
+}
+.network-section-head h2{margin-bottom:0;max-width:720px}
+.network-section-head>p{margin:0;color:var(--muted);max-width:440px;justify-self:end}
+.network-method-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+.network-method-grid article{
+  min-height:245px;
+  padding:24px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  background:linear-gradient(160deg,rgba(105,183,255,.045),rgba(255,151,60,.018)),var(--panel);
+}
+.network-method-grid article>span{
+  color:#ffad68;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.network-method-grid h3{margin-top:50px;font-size:20px}
+.network-method-grid p{color:var(--muted);font-size:13px;margin-bottom:0}
+
+.network-results{background:rgba(4,8,13,.45)}
+.network-key-results{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.network-metric{
+  min-height:154px;
+  padding:20px;
+  border:1px solid rgba(105,183,255,.12);
+  border-radius:17px;
+  background:var(--panel);
+  display:flex;
+  flex-direction:column;
+}
+.network-metric span{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.network-metric strong{margin-top:auto;font-size:24px;letter-spacing:-.04em}
+.network-metric small{color:#9eb1c3}
+.network-metric.best{border-color:rgba(93,220,170,.25);background:linear-gradient(160deg,rgba(93,220,170,.06),transparent),var(--panel)}
+.network-metric.risk{border-color:rgba(255,116,116,.23);background:linear-gradient(160deg,rgba(255,116,116,.055),transparent),var(--panel)}
+.network-table-shell{
+  margin-top:16px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;
+  overflow:hidden;
+  background:var(--panel);
+}
+.network-table-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+  padding:19px 21px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.network-table-heading span{display:block;color:#ffad68;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.13em}
+.network-table-heading strong{display:block;margin-top:3px;font-size:14px}
+.network-table-heading small{color:var(--muted);text-align:right}
+.network-table-scroll{overflow-x:auto}
+.network-table-shell table{width:100%;border-collapse:collapse;min-width:850px}
+.network-table-shell th,.network-table-shell td{padding:14px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,.065);font-size:12px}
+.network-table-shell th{color:#a9b9c8;font-size:9px;text-transform:uppercase;letter-spacing:.1em;background:rgba(255,255,255,.025)}
+.network-table-shell td:first-child{font-weight:800}
+.network-table-shell tbody tr:last-child td{border-bottom:0}
+.network-table-shell .row-best{background:rgba(93,220,170,.055)}
+.network-table-shell .row-risk{background:rgba(255,116,116,.05)}
+.network-figure-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.network-figure-grid figure{
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;
+  background:#f4f4f4;
+}
+.network-figure-grid img{width:100%;aspect-ratio:935/1210;object-fit:cover;object-position:center}
+.network-figure-grid figcaption{padding:16px 18px 19px;background:var(--panel);display:flex;flex-direction:column}
+.network-figure-grid figcaption span{color:var(--muted);font-size:12px;margin-top:3px}
+
+.network-lessons-grid>div:first-child p{color:var(--muted);font-size:17px}
+.network-lesson-list{display:grid;gap:11px}
+.network-lesson-list article{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  padding:19px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:rgba(255,255,255,.02);
+}
+.network-lesson-list article>span{color:#ffad68;font-size:10px;font-weight:900}
+.network-lesson-list p{color:var(--muted);font-size:13px;margin:4px 0 0}
+.network-team-note{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:22px;
+  margin-top:46px;
+  padding:19px 22px;
+  border-top:1px solid rgba(255,255,255,.09);
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.network-team-note span{color:#ffad68;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.13em;padding-top:4px}
+.network-team-note p{color:var(--muted);font-size:13px;margin:0}
+.network-close-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:34px 38px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(105,183,255,.04),rgba(255,151,60,.025)),var(--panel);
+}
+.network-close-inner h2{font-size:clamp(26px,3vw,38px);margin:8px 0 0;max-width:780px}
+
+@media(max-width:960px){
+  .home-page .project-bento{grid-template-columns:1fr;grid-template-rows:560px 370px 370px 370px}
+  .bento-network{grid-column:auto}
+  .network-hero-grid,.network-overview-grid,.network-section-head,.network-lessons-grid{grid-template-columns:1fr}
+  .network-section-head>p{justify-self:start}
+  .network-method-grid,.network-key-results{grid-template-columns:1fr 1fr}
+  .network-comparison{grid-template-columns:1fr}
+  .network-comparison>b{display:none}
+}
+@media(max-width:650px){
+  .home-page .project-bento{grid-template-rows:470px 350px 350px 370px}
+  .network-hero{padding-top:72px}
+  .network-role{grid-template-columns:1fr}
+  .network-stat-strip,.network-method-grid,.network-key-results,.network-figure-grid{grid-template-columns:1fr}
+  .network-stat-strip>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
+  .network-question-card{padding:22px}
+  .network-table-heading,.network-close-inner{align-items:flex-start;flex-direction:column}
+  .network-table-heading small{text-align:left}
+  .network-team-note{grid-template-columns:1fr;gap:6px}
+}
+
 
 /* =========================================================
    V17 — Precision Engineering Visual System
