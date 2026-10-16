@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Analog video display system engineering portfolio project.">
+  <meta
+    name="description"
+    content="Analog video display project involving circuit design, LTspice simulation, regulated power rails and oscilloscope testing."
+  >
   <title>Analog Video Display System | Simon Amanuel</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="analog-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <nav>
     <div class="container nav-inner">
       <a class="brand" href="index.html">Simon Amanuel</a>
+
       <div class="nav-links">
         <a href="index.html#projects">Projects</a>
         <a href="#work">My Work</a>
@@ -24,32 +30,50 @@
     <header class="analog-hero">
       <div class="container analog-hero-grid">
         <div class="analog-hero-copy">
-          <div class="eyebrow">Analog Electronics · ENSC 425 · 2026</div>
+          <div class="eyebrow">
+            Analog Electronics · ENSC 425 · 2026
+          </div>
+
           <h1>Analog Video<br>Display System</h1>
-          <p class="analog-lead">Designed and tested an analog circuit that takes a standard video signal and generates the timing and brightness controls needed to recreate the picture on an oscilloscope.</p>
+
+          <p class="analog-lead">
+            An analog circuit project to convert a composite video
+            input into horizontal, vertical and brightness-control
+            signals for an oscilloscope display.
+          </p>
 
           <div class="analog-role">
             <span class="analog-role-label">My work</span>
-            <span>Circuit design · regulated power rails · LTspice · lab testing · oscilloscope measurements · debugging</span>
+            <span>
+              Circuit design · regulated power rails · LTspice ·
+              bench testing · oscilloscope measurements · debugging
+            </span>
           </div>
 
           <div class="tags">
             <span class="tag">Analog Circuits</span>
             <span class="tag">LTspice</span>
             <span class="tag">Signal Processing</span>
-            <span class="tag">Power Distribution</span>
+            <span class="tag">Power Regulation</span>
             <span class="tag">Oscilloscope</span>
           </div>
         </div>
 
         <div class="analog-hero-visual">
-          <div class="analog-glow"></div>
+          <div class="analog-glow" aria-hidden="true"></div>
+
           <div class="analog-window">
             <div class="analog-window-bar">
-              <span></span><span></span><span></span>
-              <small>LTspice system design</small>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <small>LTspice circuit design</small>
             </div>
-            <img src="assets/ntsc-1-input-sync.png" alt="LTspice schematic from the analog video project">
+
+            <img
+              src="assets/ntsc-1-input-sync.png"
+              alt="LTspice schematic of the video input and synchronization circuitry"
+            >
           </div>
         </div>
       </div>
@@ -57,15 +81,17 @@
       <div class="container analog-stats">
         <div>
           <strong>1</strong>
-          <span>video input</span>
+          <span>composite video input</span>
         </div>
+
         <div>
           <strong>3</strong>
-          <span>display-control outputs</span>
+          <span>display-control functions</span>
         </div>
+
         <div>
-          <strong>2×</strong>
-          <span>simulation + bench validation</span>
+          <strong>2</strong>
+          <span>test methods: simulation and bench measurements</span>
         </div>
       </div>
     </header>
@@ -73,38 +99,59 @@
     <section class="analog-intro">
       <div class="container analog-intro-grid">
         <div>
-          <div class="eyebrow">What I Built</div>
-          <h2>A circuit that turns video into display control signals.</h2>
+          <div class="eyebrow">Project Overview</div>
+          <h2>Separating picture information from timing.</h2>
         </div>
+
         <div class="analog-intro-copy">
-          <p>A television signal carries both the picture and the timing needed to draw it. The challenge was to separate those pieces and convert them into signals an oscilloscope could use.</p>
-          <p>The result was a multi-stage analog design that handled horizontal position, vertical position and image brightness as separate functions.</p>
+          <p>
+            A composite video signal contains both picture information
+            and the timing needed to draw it. The aim was to separate
+            these components and produce signals suitable for
+            controlling an oscilloscope display.
+          </p>
+
+          <p>
+            The design brought together input conditioning,
+            synchronization, horizontal and vertical sweep generation,
+            and brightness control. Simulation and bench measurements
+            were used to examine how these stages behaved.
+          </p>
         </div>
       </div>
 
-      <div class="container analog-flow" aria-label="Video processing flow">
+      <div
+        class="container analog-flow"
+        aria-label="Video processing stages"
+      >
         <div class="analog-flow-item">
           <span>01</span>
           <strong>Video Input</strong>
           <small>Receive and condition the source signal</small>
         </div>
-        <div class="analog-flow-arrow">→</div>
+
+        <div class="analog-flow-arrow" aria-hidden="true">→</div>
+
         <div class="analog-flow-item">
           <span>02</span>
           <strong>Recover Timing</strong>
-          <small>Extract the information that keeps the image aligned</small>
+          <small>Extract synchronization information</small>
         </div>
-        <div class="analog-flow-arrow">→</div>
+
+        <div class="analog-flow-arrow" aria-hidden="true">→</div>
+
         <div class="analog-flow-item">
           <span>03</span>
           <strong>Generate Scan</strong>
           <small>Create horizontal and vertical sweep signals</small>
         </div>
-        <div class="analog-flow-arrow">→</div>
+
+        <div class="analog-flow-arrow" aria-hidden="true">→</div>
+
         <div class="analog-flow-item">
           <span>04</span>
           <strong>Control Brightness</strong>
-          <small>Use the picture signal to control beam intensity</small>
+          <small>Process the picture signal for intensity control</small>
         </div>
       </div>
     </section>
@@ -113,47 +160,77 @@
       <div class="container">
         <div class="analog-section-head">
           <div>
-            <div class="eyebrow">My Engineering Work</div>
-            <h2>From circuit idea to measured hardware.</h2>
+            <div class="eyebrow">My Work</div>
+            <h2>Circuit design, simulation and bench testing.</h2>
           </div>
-          <p>I worked across the full design cycle rather than only one stage of the project.</p>
+
+          <p>
+            My work included developing circuit stages, checking
+            waveforms and troubleshooting connections between stages.
+          </p>
         </div>
 
         <div class="analog-work-grid">
           <article class="analog-work-card">
             <span class="analog-card-num">01</span>
-            <h3>Designed the analog stages</h3>
-            <p>Developed the signal-conditioning, timing, sweep and brightness-control circuitry needed for the complete signal path.</p>
+            <h3>Analog circuit design</h3>
+            <p>
+              Worked on signal conditioning, timing, sweep generation
+              and brightness-control circuitry for the video
+              signal path.
+            </p>
           </article>
+
           <article class="analog-work-card">
             <span class="analog-card-num">02</span>
-            <h3>Simulated before building</h3>
-            <p>Used LTspice to check signal behavior and timing before moving the design into the lab.</p>
+            <h3>LTspice simulation</h3>
+            <p>
+              Used LTspice to examine signal levels, waveform shapes
+              and timing before testing the circuit in the lab.
+            </p>
           </article>
+
           <article class="analog-work-card">
             <span class="analog-card-num">03</span>
-            <h3>Measured real signals</h3>
-            <p>Used an oscilloscope to inspect intermediate waveforms and verify that each section behaved as intended.</p>
+            <h3>Oscilloscope measurements</h3>
+            <p>
+              Inspected intermediate signals on the bench and
+              compared their timing and shape with the expected
+              circuit behaviour.
+            </p>
           </article>
+
           <article class="analog-work-card">
             <span class="analog-card-num">04</span>
-            <h3>Debugged stage by stage</h3>
-            <p>Tested smaller sections independently so timing or signal-quality problems could be isolated instead of troubleshooting the whole system at once.</p>
+            <h3>Stage-by-stage debugging</h3>
+            <p>
+              Tested smaller circuit sections separately to help
+              locate timing and signal-quality issues before
+              connecting the stages.
+            </p>
           </article>
         </div>
 
         <div class="project-evidence-callout analog-power-callout">
           <div>
-            <span>Power-rail design</span>
-            <h3>Separate, regulated supplies for mixed-signal circuitry.</h3>
+            <span>Power Supplies and Integration</span>
+            <h3>Regulated rails, grounding and decoupling.</h3>
           </div>
+
           <div>
-            <p>The complete circuit used ±12 V analog rails and locally regulated ±5 V rails. I worked with 7805/7905 regulation, common grounding and local decoupling so fast-switching timing stages did not disturb the wideband analog-video path.</p>
+            <p>
+              The circuit used ±12 V analog supplies and locally
+              regulated ±5 V rails. I worked with 7805 and 7905
+              regulators, common grounding and local decoupling,
+              with attention to supply noise between the timing
+              circuitry and analog video stages.
+            </p>
+
             <ul>
               <li>±12 V analog supply distribution</li>
-              <li>7805 and 7905 regulated rails</li>
+              <li>7805 and 7905 voltage regulation</li>
               <li>Bulk and high-frequency decoupling</li>
-              <li>Shared grounding and noise-aware integration</li>
+              <li>Ground connections between circuit stages</li>
             </ul>
           </div>
         </div>
@@ -164,48 +241,109 @@
       <div class="container">
         <div class="analog-section-head">
           <div>
-            <div class="eyebrow">Testing & Evidence</div>
-            <h2>Simulation was only the starting point.</h2>
+            <div class="eyebrow">Bench Measurements</div>
+            <h2>Checking timing and waveform behaviour.</h2>
           </div>
-          <p>The circuit was also checked on the bench using controlled signals and real video input.</p>
+
+          <p>
+            Testing used controlled signals and a video input.
+            The measurements below show horizontal timing,
+            synchronization, blanking and sweep-ramp behaviour.
+          </p>
         </div>
 
         <div class="analog-gallery">
           <figure class="analog-shot analog-shot-large">
-            <img src="assets/ntsc-lab-timing.png" alt="Oscilloscope timing measurement showing a 15.73 kilohertz horizontal signal" loading="lazy" decoding="async">
+            <img
+              src="assets/ntsc-lab-timing.png"
+              alt="Oscilloscope measurement showing horizontal timing of approximately 15.73 kilohertz"
+              loading="lazy"
+              decoding="async"
+            >
+
             <figcaption>
-              <strong>Timing verification</strong>
-              <span>Horizontal timing checked at 15.734 kHz.</span>
+              <strong>Horizontal timing</strong>
+              <span>
+                Approximately 15.73 kHz measured, compared with
+                the 15.734 kHz target.
+              </span>
             </figcaption>
           </figure>
 
           <figure class="analog-shot">
-            <img src="assets/ntsc-lab-sync-blanking.png" alt="Oscilloscope synchronization and blanking waveforms" loading="lazy" decoding="async">
+            <img
+              src="assets/ntsc-lab-sync-blanking.png"
+              alt="Oscilloscope traces of synchronization and blanking signals"
+              loading="lazy"
+              decoding="async"
+            >
+
             <figcaption>
-              <strong>Sync & blanking</strong>
-              <span>Intermediate timing signals checked directly on the bench.</span>
+              <strong>Synchronization and blanking</strong>
+              <span>
+                Intermediate timing waveforms inspected on
+                the oscilloscope.
+              </span>
             </figcaption>
           </figure>
 
           <figure class="analog-shot">
-            <img src="assets/ntsc-lab-ramp.png" alt="Oscilloscope sweep ramp waveform" loading="lazy" decoding="async">
+            <img
+              src="assets/ntsc-lab-ramp.png"
+              alt="Oscilloscope measurement of a sweep-ramp waveform"
+              loading="lazy"
+              decoding="async"
+            >
+
             <figcaption>
               <strong>Sweep generation</strong>
-              <span>Ramp behavior measured before full-system integration.</span>
+              <span>
+                Ramp-waveform behaviour checked during
+                circuit testing.
+              </span>
             </figcaption>
           </figure>
         </div>
 
-        <div class="analog-measure-grid" aria-label="Measured project evidence">
-          <article><strong>15.73 kHz</strong><span>Measured horizontal timing, closely matching the 15.734 kHz NTSC target.</span></article>
-          <article><strong>Simulation → bench</strong><span>Each major stage was checked in LTspice and then verified with laboratory measurements.</span></article>
-          <article><strong>Stage-by-stage</strong><span>Sync, blanking and ramp signals were isolated before complete-system integration.</span></article>
+        <div
+          class="analog-measure-grid"
+          aria-label="Testing summary"
+        >
+          <article>
+            <strong>15.73 kHz</strong>
+            <span>
+              Approximate measured horizontal timing, close to
+              the 15.734 kHz NTSC target.
+            </span>
+          </article>
+
+          <article>
+            <strong>Simulation and bench</strong>
+            <span>
+              LTspice analysis supported the design work, while
+              laboratory measurements checked circuit behaviour.
+            </span>
+          </article>
+
+          <article>
+            <strong>Individual stages</strong>
+            <span>
+              Synchronization, blanking and ramp signals were
+              examined separately during troubleshooting.
+            </span>
+          </article>
         </div>
 
         <div class="analog-result-strip">
           <div>
-            <span class="analog-result-mark">✓</span>
-            <p><strong>What this demonstrates:</strong> I can move from simulation to real hardware, establish the required power rails, measure intermediate signals and debug a mixed-signal system methodically.</p>
+            <span class="analog-result-mark" aria-hidden="true">✓</span>
+            <p>
+              <strong>What I learned:</strong>
+              Working through the circuit stage by stage helped me
+              connect simulated behaviour with bench measurements
+              and understand the importance of power supplies,
+              grounding and signal timing during integration.
+            </p>
           </div>
         </div>
       </div>
@@ -213,24 +351,34 @@
 
     <section class="analog-tech">
       <div class="container analog-tech-inner">
-        <span>For technical reviewers</span>
-        <p>NTSC composite video · ±12 V and regulated ±5 V rails · 7805/7905 regulation · decoupling and grounding · sync separation · sweep generation · luminance processing</p>
+        <span>Technical Details</span>
+
+        <p>
+          NTSC composite video · ±12 V and regulated ±5 V rails ·
+          7805/7905 regulation · decoupling and grounding ·
+          sync separation · sweep generation · luminance processing
+        </p>
       </div>
     </section>
 
     <section class="analog-close">
       <div class="container analog-close-card">
         <div>
-          <div class="eyebrow">Project Snapshot</div>
-          <h2>Analog design, simulation and hands-on verification.</h2>
+          <div class="eyebrow">Project Summary</div>
+          <h2>Practical experience with analog design and testing.</h2>
         </div>
-        <a class="button primary" href="index.html#projects">Back to Projects →</a>
+
+        <a class="button primary" href="index.html#projects">
+          Back to Projects →
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container small">Simon Amanuel · Engineering Portfolio</div>
+    <div class="container small">
+      Simon Amanuel · Engineering Portfolio
+    </div>
   </footer>
 </body>
 </html>
