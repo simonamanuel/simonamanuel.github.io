@@ -895,18 +895,18 @@ section{padding:72px 0;border-top:1px solid rgba(255,255,255,.055)}.section-head
    V17 — Precision Engineering Visual System
    ========================================================= */
 :root{
-  --bg:#070b11;
-  --bg-2:#0a1018;
-  --panel:#0e1621;
-  --panel-2:#111d2a;
-  --text:#f6f9ff;
-  --muted:#93a3b8;
-  --line:#1e3042;
-  --line-bright:#31506d;
-  --accent:#69b7ff;
-  --accent-2:#b9dcff;
-  --violet:#8b7cff;
-  --cyan:#67e5e1;
+  --bg:#ffffff;
+  --bg-2:#f8fafc;
+  --panel:#f5f7fa;
+  --panel-2:#edf2f7;
+  --text:#172033;
+  --muted:#64748b;
+  --line:#dce3eb;
+  --line-bright:#cbd5e1;
+  --accent:#2563eb;
+  --accent-2:#1d4ed8;
+  --violet:#6366f1;
+  --cyan:#0891b2;
   --max:1180px;
 }
 
