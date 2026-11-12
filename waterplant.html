@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Water treatment PLC and SCADA automation: a simulated process-control system using OpenPLC Structured Text, Modbus TCP and Ignition Perspective.">
+  <title>Water Treatment PLC &amp; SCADA Automation | Simon Amanuel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gridlab-page waterplant-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">Simon Amanuel</a>
+    <div class="nav-links">
+      <a href="index.html#projects">Projects</a>
+      <a href="#system">System</a>
+      <a href="#controls">Control Logic</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#commissioning">Commissioning</a>
+      <a href="#source">Source Code</a>
+    </div>
+  </div>
+</nav>
+<main id="main-content">
+  <header class="gridlab-hero">
+    <div class="container">
+      <div class="eyebrow">Independent Project · Industrial Automation</div>
+      <h1>Water Treatment Plant — PLC, HMI &amp; SCADA Automation</h1>
+      <p class="gridlab-intro">I developed a simulated water-treatment and distribution system to practice PLC programming, process control, industrial communications and operator-interface design. The OpenPLC program manages equipment sequencing and safety interlocks, while an Ignition Perspective dashboard monitors the process and sends operator commands over Modbus TCP.</p>
+      <div class="tags">
+        <span class="tag">OpenPLC v4</span>
+        <span class="tag">Structured Text</span>
+        <span class="tag">Ignition Perspective</span>
+        <span class="tag">Modbus TCP</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Control &amp; Instrumentation</span>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/simonamanuel/Waterplant_PLC_SCADA" target="_blank" rel="noopener noreferrer">View GitHub Repository ↗</a>
+        <a class="button" href="index.html#projects">Back to Projects</a>
+      </div>
+      <figure class="gridlab-figure">
+        <img src="assets/waterplant-scada-overview.png" alt="Actual Ignition Perspective SCADA overview with tank level, intake pump statuses, filtration valve, distribution pressure and operator controls">
+        <figcaption>The completed Ignition Perspective overview showing the simulated plant and its monitoring and control points.</figcaption>
+      </figure>
+    </div>
+  </header>
+  <section id="system">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">01 / System architecture</div>
+        <h2>PLC control connected to a live SCADA dashboard.</h2>
+        <p>The project runs locally on a Mac, with a Docker-hosted OpenPLC Runtime, a Modbus TCP server and Ignition Maker Edition.</p>
+      </div>
+      <div class="gridlab-feature-grid">
+        <article class="gridlab-feature"><h3>PLC application</h3><p>OpenPLC Structured Text organizes pump sequencing, tank control, filtration, analog instrumentation, pressure regulation and alarms into reusable function blocks.</p></article>
+        <article class="gridlab-feature"><h3>Industrial communications</h3><p>The PLC exposes holding registers and coils through Modbus TCP. Ignition reads live process measurements and writes operator requests through its OPC UA/Modbus driver.</p></article>
+        <article class="gridlab-feature"><h3>Operator interface</h3><p>The Perspective dashboard displays level, flows, pressure, equipment state and alarms, with AUTO/OFF and alarm-acknowledgment controls.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="controls">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">02 / Control implementation</div><h2>Automatic sequencing and process protection.</h2></div>
+      <div class="gridlab-feature-grid">
+        <article class="gridlab-feature"><h3>Tank-level control</h3><p>A 50 m³ simulated tank uses hysteresis to request filling at 35% and stop intake at 80%, while inflow and demand change the simulated level.</p></article>
+        <article class="gridlab-feature"><h3>Duty/standby intake pumps</h3><p>Two intake pumps use run feedback, start timeout detection and automatic standby takeover following a simulated duty-pump failure.</p></article>
+        <article class="gridlab-feature"><h3>Filtration interlocks</h3><p>A differential-pressure trip latches above 80 kPa. Reset is permitted only after pressure decreases to 40 kPa or below and an explicit reset is applied.</p></article>
+        <article class="gridlab-feature"><h3>Pressure control</h3><p>A simulated distribution pump uses PI control to regulate delivery pressure near a 400 kPa setpoint, with VFD speed shown on the HMI.</p></article>
+        <article class="gridlab-feature"><h3>Level sensing</h3><p>A simulated 4–20 mA transmitter provides scaled tank level and sensor-health checks used in process permissives.</p></article>
+        <article class="gridlab-feature"><h3>Operator modes &amp; alarms</h3><p>AUTO/OFF selection, alarm states and acknowledgment are exchanged through Modbus; protective logic remains within the PLC.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="screenshots">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">03 / Actual project screenshots</div><h2>PLC logic and SCADA in operation.</h2><p>These are captures from my running OpenPLC and Ignition development environment.</p></div>
+      <div class="gridlab-screenshot-grid">
+        <figure class="gridlab-figure"><img src="assets/waterplant-automatic-operation.png" loading="lazy" alt="Ignition HMI in AUTO mode with Pump A running, tank filling and distribution pressure near 400 kPa"><figcaption><strong>Automatic operation.</strong> The intake pump is running; observed flow values are 20 m³/h inflow and 10 m³/h outflow, with pressure near the 400 kPa target.</figcaption></figure>
+        <figure class="gridlab-figure"><img src="assets/waterplant-plc-control-logic.png" loading="lazy" alt="OpenPLC Editor displaying reusable function blocks, Structured Text code and live debugger values"><figcaption><strong>PLC implementation.</strong> Structured Text main program, reusable function blocks and live debugger values.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <section id="commissioning">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">04 / Commissioning</div><h2>Validated through simulated operating scenarios.</h2></div>
+      <div class="gridlab-steps">
+        <div class="gridlab-step"><strong>1. Normal operation</strong><p>Verified AUTO/OFF control, filtration permissives, intake pump operation and tank filling to the 80% stop threshold.</p></div>
+        <div class="gridlab-step"><strong>2. Distribution pressure</strong><p>Observed pressure regulation at approximately 400 kPa with changing tank conditions and flow demand.</p></div>
+        <div class="gridlab-step"><strong>3. Fault response</strong><p>Simulated level-sensor failure, duty-pump failure, low-tank-level protection and high filter differential pressure; checked associated equipment responses.</p></div>
+        <div class="gridlab-step"><strong>4. Filtration recovery</strong><p>Verified the filtration blockage latch remained set until an explicit fault reset was applied with differential pressure at a safe value.</p></div>
+      </div>
+      <p class="gridlab-note" style="margin-top:24px"><strong>Scope:</strong> This is a software simulation and learning project. No physical water-treatment equipment, industrial PLC hardware or safety-rated process was commissioned.</p>
+    </div>
+  </section>
+  <section id="source">
+    <div class="container gridlab-close">
+      <div><div class="eyebrow">05 / Source code &amp; project files</div><h2>Explore the implementation.</h2><p class="muted">The repository includes OpenPLC Structured Text source, Modbus configuration, Ignition project and tag exports, screenshots and commissioning notes.</p></div>
+      <a class="button primary" href="https://github.com/simonamanuel/Waterplant_PLC_SCADA" target="_blank" rel="noopener noreferrer">Open WaterPlant on GitHub ↗</a>
+    </div>
+  </section>
+</main>
+<footer><div class="container"><a href="index.html#projects">← All Projects</a><p class="small">Simon Amanuel · Engineering Portfolio</p></div></footer>
+</body>
+</html>
