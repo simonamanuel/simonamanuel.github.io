@@ -1,352 +1,242 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="Three-stage Wilkinson RF power divider/combiner project: calculations, circuit simulation and microstrip modelling by Simon Amanuel."
-  >
-  <title>RF Signal Distribution Design | Simon Amanuel</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Three-stage Wilkinson RF power divider/combiner project: calculations, circuit simulation and microstrip modelling by Simon Amanuel." name="description"/>
+<title>RF Signal Distribution Design | Simon Amanuel</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
-
 <body class="rf-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <nav>
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">Simon Amanuel</a>
-
-      <div class="nav-links">
-        <a href="index.html#projects">Projects</a>
-        <a href="#work">My Work</a>
-        <a href="#results">Results</a>
-      </div>
-    </div>
-  </nav>
-
-  <main id="main-content">
-    <header class="rf-hero">
-      <div class="container rf-hero-grid">
-        <div class="rf-hero-copy">
-          <div class="eyebrow">RF / Microwave Design · 2026</div>
-
-          <h1>RF Signal<br>Distribution Design</h1>
-
-          <p class="rf-lead">
-            A three-stage Wilkinson power divider/combiner project
-            exploring how transmission-line design affects signal
-            reflections, isolation and operating bandwidth.
-          </p>
-
-          <div class="rf-role">
-            <span>My work</span>
-            <strong>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav>
+<div class="container nav-inner">
+<a class="brand" href="index.html">Simon Amanuel</a>
+<div class="nav-links">
+<a href="index.html#projects">Projects</a>
+<a href="#work">My Work</a>
+<a href="#results">Results</a>
+</div>
+</div>
+</nav>
+<main id="main-content">
+<header class="rf-hero">
+<div class="container rf-hero-grid">
+<div class="rf-hero-copy">
+<div class="eyebrow">RF / Microwave Design · 2026</div>
+<h1>RF Signal<br/>Distribution Design</h1>
+<p class="rf-lead">Designed and simulated a three-section Wilkinson RF power-divider/combiner network, evaluating impedance transformation, port matching, isolation, and broadband S-parameter behaviour before microstrip implementation.</p>
+<div class="rf-role">
+<span>My work</span>
+<strong>
               Calculations · circuit simulation · optimization ·
               microstrip modelling
             </strong>
-          </div>
-
-          <div class="tags">
-            <span class="tag">AWRDE</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">TXLINE</span>
-            <span class="tag">RF Design</span>
-            <span class="tag">Microstrip</span>
-          </div>
-        </div>
-
-        <div class="rf-hero-visual">
-          <div class="rf-grid-bg" aria-hidden="true"></div>
-
-          <div class="rf-schematic-frame">
-            <div class="rf-frame-label">
+</div>
+<div class="tags">
+<span class="tag">AWRDE</span>
+<span class="tag">MATLAB</span>
+<span class="tag">TXLINE</span>
+<span class="tag">RF Design</span>
+<span class="tag">Microstrip</span>
+</div>
+</div>
+<div class="rf-hero-visual">
+<div aria-hidden="true" class="rf-grid-bg"></div>
+<div class="rf-schematic-frame">
+<div class="rf-frame-label">
               Three-stage Wilkinson design
             </div>
-
-            <img
-              src="assets/rf-schematic.png"
-              alt="Circuit schematic of the three-stage Wilkinson power divider/combiner"
-            >
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="rf-overview">
-      <div class="container rf-overview-grid">
-        <div>
-          <div class="eyebrow">Project Overview</div>
-          <h2>Exploring a wider operating bandwidth.</h2>
-        </div>
-
-        <div class="rf-overview-copy">
-          <p>
-            This project compared single-stage and multi-stage
-            Wilkinson designs, with a focus on matching and isolation
-            across a specified frequency band. I used calculations
-            and simulation to develop the circuit, then translated
-            the transmission-line impedances into microstrip dimensions.
-          </p>
-        </div>
-      </div>
-
-      <div class="container rf-process">
-        <div>
-          <span>01</span>
-          <strong>Calculate</strong>
-          <small>Establish the initial line parameters</small>
-        </div>
-
-        <div class="rf-process-arrow" aria-hidden="true">→</div>
-
-        <div>
-          <span>02</span>
-          <strong>Simulate</strong>
-          <small>Compare circuit responses</small>
-        </div>
-
-        <div class="rf-process-arrow" aria-hidden="true">→</div>
-
-        <div>
-          <span>03</span>
-          <strong>Optimize</strong>
-          <small>Tune matching and isolation</small>
-        </div>
-
-        <div class="rf-process-arrow" aria-hidden="true">→</div>
-
-        <div>
-          <span>04</span>
-          <strong>Model</strong>
-          <small>Translate the circuit into microstrip</small>
-        </div>
-      </div>
-
-      <div class="container project-evidence-callout rf-decision-callout">
-        <div>
-          <span>Design decision</span>
-          <h3>
-            Use three matching stages to explore the bandwidth trade-off.
-          </h3>
-        </div>
-
-        <div>
-          <p>
-            The single-stage design provided a simpler starting point.
-            The three-stage structure added more parameters to tune,
-            allowing the response to be adjusted across a wider band.
-            I compared the simulated responses before developing the
-            microstrip model.
-          </p>
-
-          <ul>
-            <li>Compared single-stage and multi-stage responses</li>
-            <li>Tuned impedance matching and output-port isolation</li>
-            <li>Cross-checked microstrip widths in TXLINE and AWRDE</li>
-            <li>Recorded the resistor-footprint limitation in the layout</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="rf-work">
-      <div class="container">
-        <div class="rf-section-head">
-          <div>
-            <div class="eyebrow">My Work</div>
-            <h2>From initial calculations to a microstrip model.</h2>
-          </div>
-
-          <p>
-            The work combined analytical calculations, circuit
-            comparisons and simulation-based refinement.
-          </p>
-        </div>
-
-        <div class="rf-work-grid">
-          <article>
-            <span>01</span>
-            <h3>Initial calculations</h3>
-            <p>
-              Used analytical calculations, MATLAB and TXLINE to
-              establish starting transmission-line parameters and
-              check the calculated dimensions.
-            </p>
-          </article>
-
-          <article>
-            <span>02</span>
-            <h3>Design comparisons</h3>
-            <p>
-              Compared single-stage and multi-stage matching
-              structures to examine how the number of sections
-              affected bandwidth and the simulated response.
-            </p>
-          </article>
-
-          <article>
-            <span>03</span>
-            <h3>Circuit optimization</h3>
-            <p>
-              Used AWRDE to tune circuit parameters and evaluate
-              return loss and isolation across the target
-              frequency range.
-            </p>
-          </article>
-
-          <article>
-            <span>04</span>
-            <h3>Microstrip modelling</h3>
-            <p>
-              Converted the ideal transmission lines into microstrip
-              dimensions on Rogers RO4003 and evaluated the
-              resulting model in simulation.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="results" class="rf-results">
-      <div class="container">
-        <div class="rf-section-head">
-          <div>
-            <div class="eyebrow">Simulation Results</div>
-            <h2>Comparing the ideal circuit and microstrip responses.</h2>
-          </div>
-
-          <p>
-            These plots show simulated performance after optimization.
-            They are not measurements from a fabricated board.
-          </p>
-        </div>
-
-        <div class="rf-results-grid">
-          <figure class="rf-result-main">
-            <img
-              src="assets/rf-optimized-response.png"
-              alt="Simulated frequency response of the optimized ideal three-stage Wilkinson circuit"
-              loading="lazy"
-              decoding="async"
-            >
-
-            <figcaption>
-              <strong>Optimized ideal circuit</strong>
-              <span>
+<img alt="Circuit schematic of the three-stage Wilkinson power divider/combiner" src="assets/rf-schematic.png"/>
+</div>
+</div>
+</div>
+</header>
+<section class="rf-overview">
+<div class="container rf-overview-grid">
+<div>
+<div class="eyebrow">Project Overview</div>
+<h2>Broadband impedance matching and output-port isolation.</h2>
+</div>
+<div class="rf-overview-copy">
+<p>Compared single- and multi-section Wilkinson topologies using analytical transmission-line synthesis and EM-aware microstrip modelling, with emphasis on return loss and output-port isolation over the design band.</p>
+</div>
+</div>
+<div class="container rf-process">
+<div>
+<span>01</span>
+<strong>Calculate</strong>
+<small>Establish the initial line parameters</small>
+</div>
+<div aria-hidden="true" class="rf-process-arrow">→</div>
+<div>
+<span>02</span>
+<strong>Simulate</strong>
+<small>Compare circuit responses</small>
+</div>
+<div aria-hidden="true" class="rf-process-arrow">→</div>
+<div>
+<span>03</span>
+<strong>Optimize</strong>
+<small>Tune matching and isolation</small>
+</div>
+<div aria-hidden="true" class="rf-process-arrow">→</div>
+<div>
+<span>04</span>
+<strong>Model</strong>
+<small>Translate the circuit into microstrip</small>
+</div>
+</div>
+<div class="container project-evidence-callout rf-decision-callout">
+<div>
+<span>Design decision</span>
+<h3>Three-section transmission-line matching network.</h3>
+</div>
+<div>
+<p>The single-section divider established a baseline response. Cascading three impedance-transforming sections introduced additional degrees of freedom to tune match and isolation across the frequency range.</p>
+<ul>
+<li>Compared single- versus three-section broadband S-parameter responses</li>
+<li>Optimized input return loss and isolation between output ports</li>
+<li>Cross-checked microstrip characteristic impedance and width using TXLINE/AWRDE</li>
+<li>Documented resistor-footprint constraints affecting PCB layout completion</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="rf-work" id="work">
+<div class="container">
+<div class="rf-section-head">
+<div>
+<div class="eyebrow">My Work</div>
+<h2>Transmission-line synthesis and RF circuit optimization.</h2>
+</div>
+<p>Used analytical impedance calculations, MATLAB, TXLINE, and AWR Design Environment to move from an ideal transmission-line network to a substrate-specific microstrip model.</p>
+</div>
+<div class="rf-work-grid">
+<article>
+<span>01</span>
+<h3>Initial calculations</h3>
+<p>Calculated starting characteristic impedances and electrical lengths, then translated them into initial microstrip geometry using MATLAB and TXLINE.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Design comparisons</h3>
+<p>Evaluated the simulated return-loss and isolation trade-offs as the Wilkinson network increased from one matching section to three.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Circuit optimization</h3>
+<p>Optimized transmission-line parameters in AWRDE and inspected frequency-dependent S-parameters, including matching and output-port isolation.</p>
+</article>
+<article>
+<span>04</span>
+<h3>Microstrip modelling</h3>
+<p>Mapped ideal transmission lines to Rogers RO4003 microstrip widths/lengths and re-simulated the physical transmission-line representation.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="rf-results" id="results">
+<div class="container">
+<div class="rf-section-head">
+<div>
+<div class="eyebrow">Simulation Results</div>
+<h2>Ideal-network versus microstrip S-parameter response.</h2>
+</div>
+<p>The plots report simulated circuit and microstrip responses after parameter tuning; they are not VNA measurements of fabricated hardware.</p>
+</div>
+<div class="rf-results-grid">
+<figure class="rf-result-main">
+<img alt="Simulated frequency response of the optimized ideal three-stage Wilkinson circuit" decoding="async" loading="lazy" src="assets/rf-optimized-response.png"/>
+<figcaption>
+<strong>Optimized ideal circuit</strong>
+<span>
                 Simulated response after tuning the multi-stage
                 design in AWRDE.
               </span>
-            </figcaption>
-          </figure>
-
-          <figure class="rf-result-side">
-            <img
-              src="assets/rf-final-response.png"
-              alt="Simulated microstrip frequency response with return-loss and isolation markers"
-              loading="lazy"
-              decoding="async"
-            >
-
-            <figcaption>
-              <strong>Microstrip simulation</strong>
-              <span>
+</figcaption>
+</figure>
+<figure class="rf-result-side">
+<img alt="Simulated microstrip frequency response with return-loss and isolation markers" decoding="async" loading="lazy" src="assets/rf-final-response.png"/>
+<figcaption>
+<strong>Microstrip simulation</strong>
+<span>
                 Response after replacing the ideal transmission
                 lines with a microstrip model.
               </span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="rf-result-cards">
-          <div>
-            <strong>95–260 MHz</strong>
-            <span>
+</figcaption>
+</figure>
+</div>
+<div class="rf-result-cards">
+<div>
+<strong>95 to 260 MHz</strong>
+<span>
               Specified operating band used to evaluate the
               optimized return-loss response.
             </span>
-          </div>
-
-          <div>
-            <strong>Return loss &gt;30 dB</strong>
-            <span>
+</div>
+<div>
+<strong>Return loss &gt;30 dB</strong>
+<span>
               Simulated input and output return loss across the
               specified band in the optimized ideal circuit.
             </span>
-          </div>
-
-          <div>
-            <strong>Coupling &lt;−30 dB</strong>
-            <span>
+</div>
+<div>
+<strong>Coupling &lt;−30 dB</strong>
+<span>
               Simulated output-to-output coupling across the
-              90–270 MHz evaluation range, corresponding to
+              90 to 270 MHz evaluation range, corresponding to
               more than 30 dB of isolation.
             </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="rf-tech">
-      <div class="container rf-tech-card">
-        <div>
-          <div class="eyebrow">Technical Details</div>
-          <h3>Three-stage Wilkinson power divider/combiner</h3>
-        </div>
-
-        <div class="rf-tech-specs">
-          <span>
-            <strong>180 MHz</strong>
+</div>
+</div>
+</div>
+</section>
+<section class="rf-tech">
+<div class="container rf-tech-card">
+<div>
+<div class="eyebrow">Technical Details</div>
+<h3>Three-stage Wilkinson power divider/combiner</h3>
+</div>
+<div class="rf-tech-specs">
+<span>
+<strong>180 MHz</strong>
             design centre frequency
           </span>
-
-          <span>
-            <strong>50 Ω</strong>
+<span>
+<strong>50 Ω</strong>
             system impedance
           </span>
-
-          <span>
-            <strong>RO4003</strong>
+<span>
+<strong>RO4003</strong>
             modelled substrate
           </span>
-
-          <span>
-            <strong>&lt;0.06 mm</strong>
+<span>
+<strong>&lt;0.06 mm</strong>
             difference between TXLINE and AWRDE width calculations
           </span>
-        </div>
-
-        <p>
-          The project reached the circuit and microstrip simulation
-          stage. Final PCB layout refinement remained limited by
-          the available resistor footprint. A fabricated board and
-          hardware measurements were outside the completed scope.
-        </p>
-      </div>
-    </section>
-
-    <section class="rf-close">
-      <div class="container rf-close-inner">
-        <div>
-          <div class="eyebrow">What I Learned</div>
-          <h2>
-            Connecting RF calculations with simulation and
-            layout constraints.
-          </h2>
-        </div>
-
-        <a class="button primary" href="index.html#projects">
+</div>
+<p>Completed analytical design and RF/microstrip simulation. The PCB layout remained constrained by resistor-footprint availability; fabrication and measured RF validation were outside the project scope.</p>
+</div>
+</section>
+<section class="rf-close">
+<div class="container rf-close-inner">
+<div>
+<div class="eyebrow">What I Learned</div>
+<h2>RF synthesis, broadband matching, and layout trade-offs.</h2>
+</div>
+<a class="button primary" href="index.html#projects">
           Back to Projects →
         </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container small">
+</div>
+</section>
+</main>
+<footer>
+<div class="container small">
       Simon Amanuel · Engineering Portfolio
     </div>
-  </footer>
+</footer>
 </body>
 </html>

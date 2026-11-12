@@ -1,471 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="A team simulation study comparing TCP CUBIC, TCP BBR and three queue disciplines under synchronized data centre incast using ns-3."
-  >
-  <title>Data Centre Congestion Control | Simon Amanuel</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="A team simulation study comparing TCP CUBIC, TCP BBR and three queue disciplines under synchronized data centre incast using ns-3." name="description"/>
+<title>Data Centre Congestion Control | Simon Amanuel</title>
+<link href="styles.css" rel="stylesheet"/>
 </head>
-
 <body class="network-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <nav>
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">Simon Amanuel</a>
-
-      <div class="nav-links">
-        <a href="index.html#projects">Projects</a>
-        <a href="#method">Method</a>
-        <a href="#results">Results</a>
-        <a href="#lessons">Lessons</a>
-      </div>
-    </div>
-  </nav>
-
-  <main id="main-content">
-    <header class="network-hero">
-      <div class="container network-hero-grid">
-        <div class="network-hero-copy">
-          <div class="eyebrow">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav>
+<div class="container nav-inner">
+<a class="brand" href="index.html">Simon Amanuel</a>
+<div class="nav-links">
+<a href="index.html#projects">Projects</a>
+<a href="#method">Method</a>
+<a href="#results">Results</a>
+<a href="#lessons">Lessons</a>
+</div>
+</div>
+</nav>
+<main id="main-content">
+<header class="network-hero">
+<div class="container network-hero-grid">
+<div class="network-hero-copy">
+<div class="eyebrow">
             Networks / Simulation · ENSC 427 · 2026
           </div>
-
-          <h1>Data Centre<br>Congestion Control</h1>
-
-          <p class="network-lead">
-            A team study comparing TCP CUBIC and TCP BBR when many
-            senders transmit to one receiver at the same time.
-            We examined how FIFO, RED and FqCoDel affected goodput,
-            flow-completion time, packet loss and fairness.
-          </p>
-
-          <div class="network-role">
-            <span>My contribution</span>
-            <strong>
+<h1>Data Centre<br/>Congestion Control</h1>
+<p class="network-lead">Two-person ns-3/C++ study of TCP incast, comparing CUBIC and BBR under FIFO, RED, and FqCoDel queue disciplines using aggregate goodput, flow-completion time, packet loss, and Jain’s fairness index.</p>
+<div class="network-role">
+<span>My contribution</span>
+<strong>
               Shared equally with my teammate: experiment design,
               ns-3 simulation, C++ implementation, analysis and reporting
             </strong>
-          </div>
-
-          <div class="tags">
-            <span class="tag">ns-3 v3.46.1</span>
-            <span class="tag">C++</span>
-            <span class="tag">TCP</span>
-            <span class="tag">Queue Management</span>
-            <span class="tag">Data Analysis</span>
-          </div>
-        </div>
-
-        <figure class="network-hero-visual">
-          <img
-            src="assets/network-methodology.jpg"
-            alt="Simulated network topology showing multiple senders connected through a bottleneck router to one receiver"
-          >
-          <figcaption>
+</div>
+<div class="tags">
+<span class="tag">ns-3 v3.46.1</span>
+<span class="tag">C++</span>
+<span class="tag">TCP</span>
+<span class="tag">Queue Management</span>
+<span class="tag">Data Analysis</span>
+</div>
+</div>
+<figure class="network-hero-visual">
+<img alt="Simulated network topology showing multiple senders connected through a bottleneck router to one receiver" src="assets/network-methodology.jpg"/>
+<figcaption>
             Many-to-one topology used to study synchronized incast.
           </figcaption>
-        </figure>
-      </div>
-
-      <div
-        class="container network-stat-strip"
-        aria-label="Final simulation configuration"
-      >
-        <div>
-          <strong>64</strong>
-          <span>synchronized senders</span>
-        </div>
-
-        <div>
-          <strong>10 Gbps</strong>
-          <span>bottleneck link</span>
-        </div>
-
-        <div>
-          <strong>6</strong>
-          <span>configurations compared</span>
-        </div>
-
-        <div>
-          <strong>4</strong>
-          <span>performance metrics</span>
-        </div>
-      </div>
-    </header>
-
-    <section class="network-overview">
-      <div class="container network-overview-grid">
-        <div>
-          <div class="eyebrow">Study Question</div>
-          <h2>
-            How does queue management affect CUBIC and BBR during incast?
-          </h2>
-        </div>
-
-        <div class="network-overview-copy">
-          <p>
-            Incast occurs when many senders transmit to one receiver
-            at nearly the same time. The burst can overwhelm a
-            bottleneck queue, causing packet loss, retransmissions
-            and longer transfer times.
-          </p>
-
-          <p>
-            We first varied sender count and queue depth under FIFO.
-            We then used a fixed stress case with 64 senders and a
-            configured queue depth of 50 packets to compare two TCP
-            variants, each paired with three queue disciplines.
-          </p>
-        </div>
-      </div>
-
-      <div class="container network-question-card">
-        <span>Core comparison</span>
-
-        <div class="network-comparison">
-          <div>
-            <strong>CUBIC or BBR</strong>
-            <small>Two TCP congestion-control variants</small>
-          </div>
-
-          <b aria-hidden="true">×</b>
-
-          <div>
-            <strong>FIFO · RED · FqCoDel</strong>
-            <small>Three queue disciplines</small>
-          </div>
-
-          <b aria-hidden="true">=</b>
-
-          <div>
-            <strong>Six configurations</strong>
-            <small>Compared under the same traffic conditions</small>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="method" class="network-method">
-      <div class="container network-section-head">
-        <div>
-          <div class="eyebrow">Method</div>
-          <h2>Compare configurations under a controlled workload.</h2>
-        </div>
-
-        <p>
-          We examined aggregate performance and per-flow behaviour
-          to understand the trade-offs between transfer rate,
-          completion time, loss and fairness.
-        </p>
-      </div>
-
-      <div class="container network-method-grid">
-        <article>
-          <span>01</span>
-          <h3>Create synchronized traffic</h3>
-          <p>
-            Used synchronized BulkSend applications in ns-3 to
-            generate a many-to-one burst through the bottleneck.
-          </p>
-        </article>
-
-        <article>
-          <span>02</span>
-          <h3>Vary the initial conditions</h3>
-          <p>
-            Tested sender counts from 2 to 64 and queue depths
-            from 10 to 100 packets to examine when performance
-            deteriorated.
-          </p>
-        </article>
-
-        <article>
-          <span>03</span>
-          <h3>Compare six configurations</h3>
-          <p>
-            Paired CUBIC and BBR with FIFO, RED and FqCoDel under
-            the same 64-sender stress condition.
-          </p>
-        </article>
-
-        <article>
-          <span>04</span>
-          <h3>Analyse the trade-offs</h3>
-          <p>
-            Compared aggregate goodput, median flow-completion
-            time, packet loss and Jain’s fairness index.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="results" class="network-results">
-      <div class="container network-section-head">
-        <div>
-          <div class="eyebrow">Simulation Results</div>
-          <h2>Different pairings favoured different metrics.</h2>
-        </div>
-
-        <p>
-          In the tested workload, CUBIC with FqCoDel had the highest
-          goodput and fairness index. BBR with FIFO or RED had the
-          lowest median flow-completion time.
-        </p>
-      </div>
-
-      <div class="container network-key-results">
-        <div class="network-metric best">
-          <span>Highest goodput in this comparison</span>
-          <strong>7,258.7 Mbps</strong>
-          <small>CUBIC + FqCoDel</small>
-        </div>
-
-        <div class="network-metric best">
-          <span>Highest fairness index in this comparison</span>
-          <strong>0.51</strong>
-          <small>CUBIC + FqCoDel</small>
-        </div>
-
-        <div class="network-metric">
-          <span>Lowest median flow-completion time</span>
-          <strong>2.01 ms</strong>
-          <small>BBR + FIFO or RED</small>
-        </div>
-
-        <div class="network-metric risk">
-          <span>Highest packet loss in this comparison</span>
-          <strong>14.13%</strong>
-          <small>BBR + FqCoDel</small>
-        </div>
-      </div>
-
-      <div class="container network-table-shell">
-        <div class="network-table-heading">
-          <div>
-            <span id="network-table-title">
+</figure>
+</div>
+<div aria-label="Final simulation configuration" class="container network-stat-strip">
+<div>
+<strong>64</strong>
+<span>synchronized senders</span>
+</div>
+<div>
+<strong>10 Gbps</strong>
+<span>bottleneck link</span>
+</div>
+<div>
+<strong>6</strong>
+<span>configurations compared</span>
+</div>
+<div>
+<strong>4</strong>
+<span>performance metrics</span>
+</div>
+</div>
+</header>
+<section class="network-overview">
+<div class="container network-overview-grid">
+<div>
+<div class="eyebrow">Study Question</div>
+<h2>Transport congestion control under synchronized incast traffic.</h2>
+</div>
+<div class="network-overview-copy">
+<p>Incast produces near-simultaneous many-to-one TCP bursts. Bottleneck queue saturation increases packet loss, retransmission pressure, and tail completion times; the outcome depends on both transport congestion control and active queue management.</p>
+<p>A baseline FIFO sweep varied sender counts and queue depths. The controlled stress experiment then compared six CUBIC/BBR × FIFO/RED/FqCoDel combinations at 64 senders and a configured 50-packet queue.</p>
+</div>
+</div>
+<div class="container network-question-card">
+<span>Core comparison</span>
+<div class="network-comparison">
+<div>
+<strong>CUBIC or BBR</strong>
+<small>Two TCP congestion-control variants</small>
+</div>
+<b aria-hidden="true">×</b>
+<div>
+<strong>FIFO · RED · FqCoDel</strong>
+<small>Three queue disciplines</small>
+</div>
+<b aria-hidden="true">=</b>
+<div>
+<strong>Six configurations</strong>
+<small>Compared under the same traffic conditions</small>
+</div>
+</div>
+</div>
+</section>
+<section class="network-method" id="method">
+<div class="container network-section-head">
+<div>
+<div class="eyebrow">Method</div>
+<h2>Reproducible simulation design and performance metrics.</h2>
+</div>
+<p>The experiment tracked end-to-end transfer performance and per-flow allocation to expose throughput, latency, loss, and fairness trade-offs.</p>
+</div>
+<div class="container network-method-grid">
+<article>
+<span>01</span>
+<h3>Create synchronized traffic</h3>
+<p>Generated synchronized many-to-one application traffic using ns-3 BulkSend clients and a shared bottleneck link.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Vary the initial conditions</h3>
+<p>Swept 2 to 64 senders and bottleneck queue capacities of 10 to 100 packets to characterize congestion sensitivity.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Compare six configurations</h3>
+<p>Evaluated the six congestion-control/queue-discipline pairings under a common 64-sender, 50-packet workload.</p>
+</article>
+<article>
+<span>04</span>
+<h3>Analyse the trade-offs</h3>
+<p>Computed aggregate application goodput, median flow-completion time, packet loss, and Jain’s fairness index for each configuration.</p>
+</article>
+</div>
+</section>
+<section class="network-results" id="results">
+<div class="container network-section-head">
+<div>
+<div class="eyebrow">Simulation Results</div>
+<h2>No single TCP/AQM pairing dominated every metric.</h2>
+</div>
+<p>Under the tested workload, CUBIC/FqCoDel achieved the highest aggregate goodput and fairness; BBR/FIFO and BBR/RED produced the shortest median flow-completion times.</p>
+</div>
+<div class="container network-key-results">
+<div class="network-metric best">
+<span>Highest goodput in this comparison</span>
+<strong>7,258.7 Mbps</strong>
+<small>CUBIC + FqCoDel</small>
+</div>
+<div class="network-metric best">
+<span>Highest fairness index in this comparison</span>
+<strong>0.51</strong>
+<small>CUBIC + FqCoDel</small>
+</div>
+<div class="network-metric">
+<span>Lowest median flow-completion time</span>
+<strong>2.01 ms</strong>
+<small>BBR + FIFO or RED</small>
+</div>
+<div class="network-metric risk">
+<span>Highest packet loss in this comparison</span>
+<strong>14.13%</strong>
+<small>BBR + FqCoDel</small>
+</div>
+</div>
+<div class="container network-table-shell">
+<div class="network-table-heading">
+<div>
+<span id="network-table-title">
               Six-configuration comparison
             </span>
-
-            <strong>
+<strong>
               64 senders · configured queue depth: 50 packets ·
               message size: 32 KB
             </strong>
-          </div>
-
-          <small>Reported simulation results</small>
-        </div>
-
-        <div
-          class="network-table-scroll"
-          role="region"
-          aria-labelledby="network-table-title"
-          tabindex="0"
-        >
-          <table aria-labelledby="network-table-title">
-            <thead>
-              <tr>
-                <th scope="col">Configuration</th>
-                <th scope="col">Goodput</th>
-                <th scope="col">Median FCT</th>
-                <th scope="col">Packet loss</th>
-                <th scope="col">Fairness index</th>
-                <th scope="col">Observation</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>CUBIC + FIFO</td>
-                <td>5,358.7 Mbps</td>
-                <td>3.16 ms</td>
-                <td>7.52%</td>
-                <td>0.29</td>
-                <td>CUBIC baseline</td>
-              </tr>
-
-              <tr>
-                <td>CUBIC + RED</td>
-                <td>5,431.4 Mbps</td>
-                <td>3.16 ms</td>
-                <td>7.51%</td>
-                <td>0.30</td>
-                <td>Similar results to CUBIC + FIFO</td>
-              </tr>
-
-              <tr class="row-best">
-                <td>CUBIC + FqCoDel</td>
-                <td>7,258.7 Mbps</td>
-                <td>3.25 ms</td>
-                <td>7.74%</td>
-                <td>0.51</td>
-                <td>Highest goodput and fairness index</td>
-              </tr>
-
-              <tr>
-                <td>BBR + FIFO</td>
-                <td>6,826.5 Mbps</td>
-                <td>2.01 ms</td>
-                <td>7.49%</td>
-                <td>0.31</td>
-                <td>Tied for lowest median FCT</td>
-              </tr>
-
-              <tr>
-                <td>BBR + RED</td>
-                <td>6,933.5 Mbps</td>
-                <td>2.01 ms</td>
-                <td>7.48%</td>
-                <td>0.31</td>
-                <td>Tied for lowest median FCT</td>
-              </tr>
-
-              <tr class="row-risk">
-                <td>BBR + FqCoDel</td>
-                <td>4,455.4 Mbps</td>
-                <td>3.37 ms</td>
-                <td>14.13%</td>
-                <td>0.30</td>
-                <td>Lowest goodput and highest packet loss</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="container network-figure-grid">
-        <figure>
-          <img
-            src="assets/network-results-goodput-fairness.jpg"
-            alt="Simulation charts comparing aggregate goodput and Jain’s fairness index across the six configurations"
-            loading="lazy"
-            decoding="async"
-          >
-
-          <figcaption>
-            <strong>Goodput and fairness</strong>
-            <span>
+</div>
+<small>Reported simulation results</small>
+</div>
+<div aria-labelledby="network-table-title" class="network-table-scroll" role="region" tabindex="0">
+<table aria-labelledby="network-table-title">
+<thead>
+<tr>
+<th scope="col">Configuration</th>
+<th scope="col">Goodput</th>
+<th scope="col">Median FCT</th>
+<th scope="col">Packet loss</th>
+<th scope="col">Fairness index</th>
+<th scope="col">Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CUBIC + FIFO</td>
+<td>5,358.7 Mbps</td>
+<td>3.16 ms</td>
+<td>7.52%</td>
+<td>0.29</td>
+<td>CUBIC baseline</td>
+</tr>
+<tr>
+<td>CUBIC + RED</td>
+<td>5,431.4 Mbps</td>
+<td>3.16 ms</td>
+<td>7.51%</td>
+<td>0.30</td>
+<td>Similar results to CUBIC + FIFO</td>
+</tr>
+<tr class="row-best">
+<td>CUBIC + FqCoDel</td>
+<td>7,258.7 Mbps</td>
+<td>3.25 ms</td>
+<td>7.74%</td>
+<td>0.51</td>
+<td>Highest goodput and fairness index</td>
+</tr>
+<tr>
+<td>BBR + FIFO</td>
+<td>6,826.5 Mbps</td>
+<td>2.01 ms</td>
+<td>7.49%</td>
+<td>0.31</td>
+<td>Tied for lowest median FCT</td>
+</tr>
+<tr>
+<td>BBR + RED</td>
+<td>6,933.5 Mbps</td>
+<td>2.01 ms</td>
+<td>7.48%</td>
+<td>0.31</td>
+<td>Tied for lowest median FCT</td>
+</tr>
+<tr class="row-risk">
+<td>BBR + FqCoDel</td>
+<td>4,455.4 Mbps</td>
+<td>3.37 ms</td>
+<td>14.13%</td>
+<td>0.30</td>
+<td>Lowest goodput and highest packet loss</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="container network-figure-grid">
+<figure>
+<img alt="Simulation charts comparing aggregate goodput and Jain’s fairness index across the six configurations" decoding="async" loading="lazy" src="assets/network-results-goodput-fairness.jpg"/>
+<figcaption>
+<strong>Goodput and fairness</strong>
+<span>
               CUBIC with FqCoDel had the highest values on both
               measures among the configurations tested.
             </span>
-          </figcaption>
-        </figure>
-
-        <figure>
-          <img
-            src="assets/network-results-latency-loss.jpg"
-            alt="Simulation charts comparing flow-completion time and packet loss across the six configurations"
-            loading="lazy"
-            decoding="async"
-          >
-
-          <figcaption>
-            <strong>Completion time and packet loss</strong>
-            <span>
+</figcaption>
+</figure>
+<figure>
+<img alt="Simulation charts comparing flow-completion time and packet loss across the six configurations" decoding="async" loading="lazy" src="assets/network-results-latency-loss.jpg"/>
+<figcaption>
+<strong>Completion time and packet loss</strong>
+<span>
               BBR with FqCoDel had a longer median completion time
               and more packet loss than BBR with FIFO or RED.
             </span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="lessons" class="network-lessons">
-      <div class="container network-lessons-grid">
-        <div>
-          <div class="eyebrow">Interpretation and Limits</div>
-          <h2>No single configuration led on every metric.</h2>
-
-          <p>
-            The results showed why congestion control and queue
-            management need to be considered together. In this
-            experiment, the configuration with the highest goodput
-            did not have the shortest median completion time.
-          </p>
-
-          <p>
-            These findings describe the simulated topology, traffic
-            pattern and settings used in the study. Other workloads
-            or network configurations would need separate testing.
-          </p>
-        </div>
-
-        <div class="network-lesson-list">
-          <article>
-            <span>01</span>
-            <div>
-              <strong>Interactions matter</strong>
-              <p>
-                FqCoDel increased goodput and fairness for CUBIC,
-                while the BBR pairing produced lower goodput and
-                higher loss under the tested conditions.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <span>02</span>
-            <div>
-              <strong>Use several measures</strong>
-              <p>
-                Goodput alone did not describe the full result.
-                Completion time, loss and fairness revealed
-                additional trade-offs. The highest fairness
-                index was 0.51, still below the ideal value of 1.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <span>03</span>
-            <div>
-              <strong>Keep the model’s limits visible</strong>
-              <p>
-                Perfectly synchronized senders created a deliberately
-                demanding test case. The study used FqCoDel as its
-                fair-queueing approach; it was not an exact
-                implementation of weighted fair queueing.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="container network-team-note">
-        <span>Team Project</span>
-        <p>
-          This was a two-person project. My teammate and I contributed
-          equally to experiment design, simulation, C++ implementation,
-          data analysis and report writing.
-        </p>
-      </div>
-    </section>
-
-    <section class="network-close">
-      <div class="container network-close-inner">
-        <div>
-          <div class="eyebrow">What I Learned</div>
-          <h2>
-            Designing network experiments and interpreting
-            performance trade-offs.
-          </h2>
-        </div>
-
-        <a class="button primary" href="index.html#projects">
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="network-lessons" id="lessons">
+<div class="container network-lessons-grid">
+<div>
+<div class="eyebrow">Interpretation and Limits</div>
+<h2>Throughput, latency and fairness trade-offs in incast.</h2>
+<p>The best-performing configuration depended on the metric: maximizing goodput did not minimize median completion time. Transport control and bottleneck queue management therefore cannot be evaluated independently.</p>
+<p>Results are specific to the modeled topology, offered load, traffic synchronization, and queue parameters; other operating regimes require separate experiments.</p>
+</div>
+<div class="network-lesson-list">
+<article>
+<span>01</span>
+<div>
+<strong>Interactions matter</strong>
+<p>For CUBIC, FqCoDel improved aggregate goodput and fairness in the stress case, while its BBR pairing showed greater loss and lower goodput.</p>
+</div>
+</article>
+<article>
+<span>02</span>
+<div>
+<strong>Use several measures</strong>
+<p>The maximum observed Jain fairness index was 0.51, well below the ideal value of 1; goodput, completion time, and loss provide necessary complementary evidence.</p>
+</div>
+</article>
+<article>
+<span>03</span>
+<div>
+<strong>Keep the model’s limits visible</strong>
+<p>The workload intentionally synchronized senders to stress the bottleneck. FqCoDel supplied fair queueing with controlled delay; it was not an implementation of weighted fair queueing.</p>
+</div>
+</article>
+</div>
+</div>
+<div class="container network-team-note">
+<span>Team Project</span>
+<p>This was a two-person project with equal contributions to experiment design, ns-3/C++ implementation, metric extraction, interpretation, and reporting.</p>
+</div>
+</section>
+<section class="network-close">
+<div class="container network-close-inner">
+<div>
+<div class="eyebrow">What I Learned</div>
+<h2>Experimental network modelling and transport-performance analysis.</h2>
+</div>
+<a class="button primary" href="index.html#projects">
           Back to Projects →
         </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container small">
+</div>
+</section>
+</main>
+<footer>
+<div class="container small">
       Simon Amanuel · Engineering Portfolio
     </div>
-  </footer>
+</footer>
 </body>
 </html>
