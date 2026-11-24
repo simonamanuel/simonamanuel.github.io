@@ -16,6 +16,7 @@
 <meta content="SFU Electronics Engineering graduate | Electrical design, embedded systems, industrial automation and controls." name="twitter:description"/>
 <meta content="https://simonamanuel.github.io/og.png" name="twitter:image"/>
 <link href="styles.css" rel="stylesheet"/>
+<link href="portfolio-additions.css" rel="stylesheet"/>
 </head>
 <body class="home-page">
 <a class="skip-link" href="#main-content">
@@ -48,7 +49,7 @@
             Engineering Science | Electronics Engineering
           </div>
 <h1>Electrical systems. <span>Embedded controls. Engineering design.</span></h1>
-<p class="home-lead">I earned a BASc in Engineering Science (Electronics Engineering option) at Simon Fraser University. My work spans embedded control and hardware integration, industrial automation, power-system simulation, analog/RF circuits, and network performance analysis. I have also supported engineering project controls and embedded-system validation in industry.</p>
+<p class="home-lead">I earned a BASc in Engineering Science (Electronics Engineering option) at Simon Fraser University. My work spans embedded control and hardware integration, industrial automation, power-system simulation, analog/RF circuits, network performance analysis, and mixed-signal PCB design. I have also supported engineering project controls and embedded-system validation in industry.</p>
 <div class="actions">
 <a class="button primary" href="#projects">
               View Projects
@@ -59,7 +60,7 @@
 </div>
 <div class="home-mini-stats">
 <div>
-<strong>06</strong>
+<strong>07</strong>
 <span>selected projects</span>
 </div>
 <div>
@@ -134,146 +135,107 @@
 </div>
 </div>
 </section>
-<!-- Projects -->
-<section class="home-projects" id="projects">
-<div class="container">
-<div class="home-section-head">
-<div>
-<div class="eyebrow">Project Work</div>
-<h2>Engineering projects and technical implementations.</h2>
-</div>
-<p>Selected work in control-system implementation, circuit design, electrical network simulation, autonomous systems, and performance evaluation. Each project includes its technical approach and validation evidence.</p>
-</div>
-<div class="project-bento">
-<!-- MailRover -->
-<a class="bento-card bento-mail" href="mailrover.html">
-<div class="bento-image">
-<img alt="MailRover autonomous parcel delivery robot" decoding="async" loading="lazy" src="assets/mailrover-robot.jpg"/>
-</div>
-<div class="bento-overlay"></div>
-<div class="bento-index">
-              01 / CAPSTONE
-            </div>
-<div class="bento-content">
-<div class="bento-title-row">
-<h3>MailRover</h3>
-<span aria-hidden="true" class="bento-arrow">↗</span>
-</div>
-<p>Five-person autonomous mobile-robot capstone integrating ROS 2 waypoint navigation, a Flask control interface, embedded access-control logic, and electromechanical parcel-lock actuation.</p>
-<div class="bento-tags">
-<span>ROS 2</span>
-<span>DC Power</span>
-<span>Wiring</span>
-<span>Integration</span>
-</div>
-</div>
-</a>
-<!-- GRIDLAB power distribution simulator -->
-<a class="bento-card bento-gridlab" href="gridlab.html">
-<div class="bento-image">
-<img alt="Screenshot of GRIDLAB power distribution simulator with 3D site model and three feeder controls" decoding="async" loading="lazy" src="assets/Overview.png"/>
-</div>
-<div class="bento-overlay"></div>
-<div class="bento-index">02 / POWER SYSTEMS</div>
-<div class="bento-content">
-<div class="bento-title-row">
-<h3>GRIDLAB</h3>
-<span aria-hidden="true" class="bento-arrow">↗</span>
-</div>
-<p>Python/pandapower distribution-network model with a 25 kV/600 V transformer, three switchable feeders, steady-state load flow, fault scenarios, and automated isolation logic.</p>
-<div class="bento-tags">
-<span>Python</span><span>pandapower</span><span>FastAPI</span><span>Protection Logic</span>
-</div>
-</div>
-</a>
-<!-- Water Treatment PLC/HMI/SCADA -->
-<a class="bento-card bento-waterplant" href="waterplant.html">
-<div class="bento-image">
-<img alt="Ignition SCADA dashboard showing tank level, pump statuses, filtration valve, pressure gauge and operator controls" decoding="async" loading="lazy" src="assets/waterplant-scada-overview.png"/>
-</div>
-<div class="bento-overlay"></div>
-<div class="bento-index">03 / INDUSTRIAL AUTOMATION</div>
-<div class="bento-content">
-<div class="bento-title-row">
-<h3>Water Treatment PLC &amp; SCADA</h3>
-<span aria-hidden="true" class="bento-arrow">↗</span>
-</div>
-<p>IEC 61131-3 Structured Text control of duty/standby pumps, 4-20 mA level instrumentation, filtration interlocks, PI pressure regulation, and Ignition SCADA over Modbus TCP.</p>
-<div class="bento-tags">
-<span>Structured Text</span><span>OpenPLC</span><span>Ignition</span><span>Modbus TCP</span>
-</div>
-</div>
-</a>
-<!-- RF project -->
-<a class="bento-card bento-rf" href="rf-combiner.html">
-<div class="bento-image">
-<img alt="RF signal distribution circuit schematic" decoding="async" loading="lazy" src="assets/rf-schematic.png"/>
-</div>
-<div class="bento-overlay"></div>
-<div class="bento-index">
-              04 / RF
-            </div>
-<div class="bento-content">
-<div class="bento-title-row">
-<h3>RF Signal Distribution</h3>
-<span aria-hidden="true" class="bento-arrow">↗</span>
-</div>
-<p>Three-stage Wilkinson divider/combiner design using transmission-line synthesis, S-parameter analysis, and Rogers RO4003 microstrip simulation in AWRDE.</p>
-<div class="bento-tags">
-<span>AWRDE</span>
-<span>MATLAB</span>
-<span>Microstrip</span>
-</div>
-</div>
-</a>
-<!-- Analog project -->
-<a class="bento-card bento-analog" href="analog-video.html">
-<div class="bento-image">
-<img alt="Analog video display circuit design" decoding="async" loading="lazy" src="assets/ntsc-card.png"/>
-</div>
-<div class="bento-overlay"></div>
-<div class="bento-index">
-              05 / ANALOG
-            </div>
-<div class="bento-content">
-<div class="bento-title-row">
-<h3>Analog Video Display</h3>
-<span aria-hidden="true" class="bento-arrow">↗</span>
-</div>
-<p>NTSC composite-video conditioning, synchronization extraction, horizontal/vertical sweep generation, and regulated analog supplies; evaluated with LTspice and oscilloscope measurements.</p>
-<div class="bento-tags">
-<span>Analog</span>
-<span>LTspice</span>
-<span>Testing</span>
-</div>
-</div>
-</a>
-<!-- Networking project -->
-<a class="bento-card bento-network" href="data-center-networks.html">
-<div class="bento-image">
-<img alt="Goodput comparison for TCP CUBIC, TCP BBR and three queue disciplines" decoding="async" loading="lazy" src="assets/network-card.svg"/>
-</div>
-<div class="bento-overlay"></div>
-<div class="bento-index">
-              06 / NETWORKS
-            </div>
-<div class="bento-content">
-<div class="bento-title-row">
-<h3>Data Center Congestion Control</h3>
-<span aria-hidden="true" class="bento-arrow">↗</span>
-</div>
-<p>ns-3/C++ incast experiments comparing TCP CUBIC and BBR under FIFO, RED, and FqCoDel, with goodput, flow-completion time, loss, and Jain fairness metrics.</p>
-<div class="bento-tags">
-<span>ns-3</span>
-<span>C++</span>
-<span>TCP</span>
-<span>Performance Analysis</span>
-</div>
-</div>
-</a>
-</div>
-</div>
+<!-- Projects: portfolio tracks, November 2026 refresh -->
+<section class="home-projects portfolio-projects" id="projects">
+  <div class="container">
+    <div class="home-section-head">
+      <div>
+        <div class="eyebrow">Selected Engineering Work</div>
+        <h2>Projects across electrical systems and electronics.</h2>
+      </div>
+      <p>Explore practical design, simulation and integration work by discipline. Project pages distinguish implemented work, simulation results and CAD-stage designs.</p>
+    </div>
+
+    <div class="portfolio-tracks" aria-label="Jump to portfolio categories">
+      <a href="#power-controls"><span class="portfolio-track-number">01</span><strong>Electrical Power &amp; Controls</strong><span aria-hidden="true">↗</span></a>
+      <a href="#electronics-embedded"><span class="portfolio-track-number">02</span><strong>Electronics &amp; Embedded Systems</strong><span aria-hidden="true">↗</span></a>
+      <a href="#additional-studies"><span class="portfolio-track-number">03</span><strong>Additional Engineering Studies</strong><span aria-hidden="true">↗</span></a>
+    </div>
+
+    <div class="portfolio-subheading">
+      <div><div class="eyebrow">Cross-disciplinary capstone</div><h3>Featured integrated system</h3></div>
+      <p>Electronics, embedded control, software interfaces and robotics in one application.</p>
+    </div>
+    <a class="portfolio-featured" href="mailrover.html" aria-label="Explore MailRover autonomous delivery robot">
+      <div class="portfolio-featured-photo"><img src="assets/mailrover-robot.jpg" alt="MailRover autonomous parcel delivery robot" loading="lazy"/></div>
+      <div class="portfolio-featured-copy">
+        <span class="portfolio-eyebrow">01 / Capstone · Team of five</span>
+        <h3>MailRover</h3>
+        <p>Autonomous parcel delivery robot integrating ROS 2 waypoint navigation, a Flask control interface, embedded access control and electromechanical parcel-lock actuation.</p>
+        <div class="portfolio-pills"><span>ROS 2</span><span>Embedded Integration</span><span>Motor Control</span><span>Flask</span></div>
+        <span class="portfolio-more">Explore the project →</span>
+      </div>
+    </a>
+
+    <div class="portfolio-track" id="power-controls">
+      <div class="portfolio-subheading">
+        <div><div class="eyebrow">Track 01</div><h3>Electrical Power &amp; Industrial Automation</h3></div>
+        <p>Power-distribution studies, PLC control logic, instrumentation and SCADA systems.</p>
+      </div>
+      <div class="portfolio-card-grid">
+        <a class="portfolio-card" href="gridlab.html">
+          <div class="portfolio-card-image"><img src="assets/Overview.png" alt="GRIDLAB electrical distribution simulator" loading="lazy"/></div>
+          <div class="portfolio-card-content"><span class="portfolio-eyebrow">Power Systems · Simulation</span><h4>GRIDLAB Power Distribution Simulator</h4>
+            <p>25 kV/600 V distribution model with three switchable feeders, load-flow studies, simulated faults and automated isolation logic.</p>
+            <div class="portfolio-pills"><span>Python</span><span>pandapower</span><span>FastAPI</span></div>
+            <span class="portfolio-more">View project →</span></div>
+        </a>
+        <a class="portfolio-card" href="waterplant.html">
+          <div class="portfolio-card-image"><img src="assets/waterplant-scada-overview.png" alt="Ignition SCADA water treatment dashboard" loading="lazy"/></div>
+          <div class="portfolio-card-content"><span class="portfolio-eyebrow">Industrial Controls · PLC/SCADA</span><h4>Water Treatment PLC &amp; SCADA</h4>
+            <p>OpenPLC Structured Text control for duty/standby pumps, tank instrumentation and interlocks, connected to Ignition SCADA over Modbus TCP.</p>
+            <div class="portfolio-pills"><span>OpenPLC</span><span>IEC 61131-3</span><span>Ignition</span></div>
+            <span class="portfolio-more">View project →</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio-track" id="electronics-embedded">
+      <div class="portfolio-subheading">
+        <div><div class="eyebrow">Track 02</div><h3>Electronics, PCB &amp; Embedded Systems</h3></div>
+        <p>Mixed-signal hardware, PCB design, analog/RF circuits and system-level interfaces.</p>
+      </div>
+      <div class="portfolio-card-grid portfolio-card-grid-three">
+        <a class="portfolio-card portfolio-card-stm" href="stm32-industrial-controller.html">
+          <div class="portfolio-card-image"><img src="https://raw.githubusercontent.com/simonamanuel/STM32-Industrial-Controller/main/Images/STM32_Controller_PCB_Layout.png" alt="Four-layer STM32 industrial controller PCB layout in KiCad" loading="lazy"/></div>
+          <div class="portfolio-card-content"><span class="portfolio-eyebrow">PCB Design · CAD-stage</span><h4>STM32 Industrial Controller</h4>
+            <p>Four-layer KiCad design with regulated power, two analog inputs, RS-485 and two intended low-side actuator outputs. ERC/DRC reports included; not fabricated.</p>
+            <div class="portfolio-pills"><span>KiCad</span><span>STM32</span><span>Mixed-Signal</span></div>
+            <span class="portfolio-more">View hardware design →</span></div>
+        </a>
+        <a class="portfolio-card" href="analog-video.html">
+          <div class="portfolio-card-image portfolio-card-image-contain"><img src="assets/ntsc-card.png" alt="Analog composite video processing circuit" loading="lazy"/></div>
+          <div class="portfolio-card-content"><span class="portfolio-eyebrow">Analog Circuit Design</span><h4>Analog Video Display</h4>
+            <p>NTSC video conditioning, sync extraction and horizontal/vertical sweep circuitry, evaluated using LTspice and bench measurements.</p>
+            <div class="portfolio-pills"><span>Analog</span><span>LTspice</span><span>Oscilloscope</span></div>
+            <span class="portfolio-more">View project →</span></div>
+        </a>
+        <a class="portfolio-card" href="rf-combiner.html">
+          <div class="portfolio-card-image portfolio-card-image-contain"><img src="assets/rf-schematic.png" alt="RF Wilkinson divider and combiner schematic" loading="lazy"/></div>
+          <div class="portfolio-card-content"><span class="portfolio-eyebrow">RF Circuit Design · Simulation</span><h4>RF Signal Distribution</h4>
+            <p>Three-stage Wilkinson divider/combiner using microstrip design, transmission-line synthesis and S-parameter simulations.</p>
+            <div class="portfolio-pills"><span>AWRDE</span><span>MATLAB</span><span>Microstrip</span></div>
+            <span class="portfolio-more">View project →</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio-track" id="additional-studies">
+      <div class="portfolio-subheading">
+        <div><div class="eyebrow">Additional Technical Studies</div><h3>Computer Networks &amp; Experimental Analysis</h3></div>
+        <p>A complementary computer-network simulation study with reproducible methods and reported results.</p>
+      </div>
+      <a class="portfolio-study-card" href="data-center-networks.html">
+        <div class="portfolio-study-visual"><img src="assets/network-results-goodput-fairness.jpg" alt="TCP congestion-control comparison of goodput and fairness" loading="lazy"/></div>
+        <div class="portfolio-study-copy"><span class="portfolio-eyebrow">ns-3 · C++ · Team Study</span><h4>Data Centre TCP Congestion Control</h4>
+          <p>Simulation of synchronized TCP incast comparing CUBIC and BBR with FIFO, RED and FqCoDel queues. Evaluated six configurations across goodput, median flow-completion time, packet loss and fairness.</p>
+          <div class="portfolio-pills"><span>64 Senders</span><span>TCP CUBIC / BBR</span><span>Queue Management</span></div>
+          <span class="portfolio-more">Read the study and results →</span></div>
+      </a>
+    </div>
+  </div>
 </section>
+
 <!-- Experience -->
 <section class="experience-section" id="experience">
 <div class="container">

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="STM32F103C8T6 industrial mixed-signal controller: four-layer KiCad PCB design, power conversion, analog sensing, RS-485 and actuator outputs. CAD-stage with documented verification and limitations."/>
+<title>STM32 Industrial Controller | Engineering Portfolio</title>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="portfolio-additions.css"/>
+</head>
+<body class="stm-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Main navigation">
+  <div class="container nav-inner"><a class="brand" href="index.html">Simon Amanuel</a>
+    <div class="nav-links"><a href="index.html#electronics-embedded">Electronics Projects</a><a href="#architecture">Architecture</a><a href="#gallery">PCB Gallery</a><a href="#verification">Verification</a></div>
+  </div>
+</nav>
+<main id="main-content">
+<header class="stm-hero">
+  <div class="container stm-hero-layout">
+    <div>
+      <div class="eyebrow">Electronics / PCB Design · Revision D</div>
+      <h1>STM32 Industrial Sensor, DAQ &amp; Actuator Controller</h1>
+      <p class="stm-intro">A four-layer mixed-signal PCB designed in KiCad around the STM32F103C8T6, integrating regulated logic supplies, two analog sensor channels, RS-485 connectivity and two intended DC actuator switching outputs.</p>
+      <div class="portfolio-pills"><span>KiCad 10</span><span>STM32F103</span><span>Four-layer PCB</span><span>Analog / Digital</span><span>RS-485</span></div>
+      <div class="stm-actions"><a class="button primary" href="https://github.com/simonamanuel/STM32-Industrial-Controller" target="_blank" rel="noopener noreferrer">View KiCad Source on GitHub ↗</a><a class="button" href="https://github.com/simonamanuel/STM32-Industrial-Controller/blob/main/KiCad/STM32_Industrial_Controller.pdf" target="_blank" rel="noopener noreferrer">Schematic PDF ↗</a></div>
+      <p class="stm-disclaimer"><strong>Engineering status:</strong> CAD-stage portfolio design only. Not fabricated, bench-tested or approved for industrial deployment.</p>
+    </div>
+    <figure class="stm-render">
+      <img src="https://raw.githubusercontent.com/simonamanuel/STM32-Industrial-Controller/main/Images/STM32_Industrial_Controller%20Top%20View.png" alt="KiCad 3D view of the STM32 controller board showing partially modeled components"/>
+      <figcaption>KiCad 3D visualization. Some component models are not populated; this is not a photographed physical assembly.</figcaption>
+    </figure>
+  </div>
+</header>
+<div class="container stm-stats" aria-label="Project specifications">
+  <article><strong>4 layers</strong><span>Copper stack-up</span></article>
+  <article><strong>218 × 146 mm</strong><span>PCB dimensions</span></article>
+  <article><strong>2 analog</strong><span>Nominal 0–10 V channels</span></article>
+  <article><strong>2 outputs</strong><span>Intended switched actuators</span></article>
+</div>
+<section class="stm-section" id="architecture">
+  <div class="container">
+    <div class="stm-section-header"><div class="eyebrow">Architecture</div><h2>Mixed-signal interfaces on one controller PCB.</h2>
+      <p>The design combines input protection, power conversion, MCU interfaces and sensor/actuator circuitry. The figures below describe design intent, not measured hardware performance.</p></div>
+    <div class="stm-subsystems">
+      <article><span>01 / INPUT</span><h3>DC Input Protection</h3><p>Fused input, transient suppression and reverse-polarity protection scheme. The logic-input design range is 9–30 V DC.</p></article>
+      <article><span>02 / POWER</span><h3>5 V &amp; 3.3 V Rails</h3><p>LMR36510 buck regulator followed by TLV75533 3.3 V LDO for MCU and interface circuitry.</p></article>
+      <article><span>03 / CONTROLLER</span><h3>STM32F103C8T6</h3><p>3.3 V microcontroller with ADC, GPIO and routed SWD, I²C, SPI and UART access.</p></article>
+      <article><span>04 / SENSING</span><h3>Analog Inputs</h3><p>Two nominal 0–10 V sensor channels with voltage scaling, filtering and input protection prior to MCU ADC pins.</p></article>
+      <article><span>05 / COMMUNICATIONS</span><h3>RS-485 Interface</h3><p>THVD1450 half-duplex transceiver with SM712 interface protection; intended for wired industrial communication.</p></article>
+      <article><span>06 / OUTPUTS</span><h3>DC Actuator Switching</h3><p>Two fused low-side IRLML0060 MOSFET outputs with flyback protection. Nominal 12 V / 1.5 A channel targets remain unverified.</p></article>
+    </div>
+  </div>
+</section>
+<section class="stm-section" id="gallery">
+  <div class="container">
+    <div class="stm-section-header"><div class="eyebrow">PCB Layout &amp; Design Evidence</div><h2>From schematic capture to routed board.</h2>
+      <p>Openable KiCad project files and CAD exports support review of routing, component placement, and circuit documentation.</p></div>
+    <div class="stm-gallery">
+      <figure><img src="https://raw.githubusercontent.com/simonamanuel/STM32-Industrial-Controller/main/Images/STM32_Controller_PCB_Layout.png" alt="Front PCB editor view showing component footprints and routed signal and power traces" loading="lazy"/><figcaption><strong>PCB Editor — Routed Layout</strong>Four-layer board, component footprints, signal routing and wider supply traces. <a href="https://github.com/simonamanuel/STM32-Industrial-Controller/tree/main/KiCad">Open project files ↗</a></figcaption></figure>
+      <figure class="stm-copper"><img src="https://raw.githubusercontent.com/simonamanuel/STM32-Industrial-Controller/main/Images/STM32_Industrial_Controller-F_Cu.svg" alt="Front copper-layer routing plotted from KiCad" loading="lazy"/><figcaption><strong>Front-Copper Routing</strong>Scalable SVG copper plot, shown on white background for legibility. <a href="https://github.com/simonamanuel/STM32-Industrial-Controller/blob/main/Images/STM32_Industrial_Controller-F_Cu.svg">Open SVG ↗</a></figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="stm-section" id="verification">
+  <div class="container">
+    <div class="stm-section-header"><div class="eyebrow">Verification &amp; Engineering Judgment</div><h2>CAD rule checks are not hardware validation.</h2>
+      <p>Revision D contains CAD rule-check reports and design-stage manufacturing outputs. These demonstrate documented design checks, not verified circuit operation.</p></div>
+    <div class="stm-verification">
+      <article><h3>Documented Design Evidence</h3><ul>
+        <li>ERC report: <strong>0 errors / 0 warnings</strong>, with four rule categories ignored.</li>
+        <li>DRC report: <strong>0 violations, 0 unconnected pads, 0 footprint errors</strong>; no checks ignored in the DRC report.</li>
+        <li>Editable KiCad project, schematic and PCB, BOM, Gerbers, drill and placement outputs supplied for design review.</li>
+        <li>Original reports available in the <a href="https://github.com/simonamanuel/STM32-Industrial-Controller/tree/main/Manufacturing">Manufacturing directory ↗</a>.</li>
+      </ul></article>
+      <article><h3>Open Engineering Review Items</h3><ul>
+        <li><strong>MOSFET gate drive:</strong> the IRLML0060 outputs are driven from approximately 3.3 V GPIO; the intended output rating has not been proven at this gate voltage.</li>
+        <li><strong>Mechanical integration:</strong> connector courtyards and assembly clearances require verification.</li>
+        <li><strong>Thermal review:</strong> exposed-pad via treatment and continuous-current copper-path voltage drop/temperature rise remain open.</li>
+        <li><strong>No physical validation:</strong> this revision includes no tested hardware or verified firmware build.</li>
+      </ul></article>
+    </div>
+    <p style="margin-top:22px;color:#58687c;font-size:13px">For full disclosure, see <a href="https://github.com/simonamanuel/STM32-Industrial-Controller/blob/main/Documentation/VERIFICATION_STATUS.md">Verification Status ↗</a> and <a href="https://github.com/simonamanuel/STM32-Industrial-Controller/blob/main/Documentation/OPEN_DESIGN_ITEMS.md">Open Design Items ↗</a>. The project was developed with AI assistance and iterative human review, as described in its repository.</p>
+  </div>
+</section>
+<section class="stm-close">
+  <div class="container"><div class="eyebrow">Explore the design files</div><h2>Review the actual schematic and PCB.</h2>
+    <p>The GitHub repository includes the KiCad sources, exported views, technical summary, bill of materials and design-stage manufacturing package.</p>
+    <div class="stm-actions"><a class="button primary" href="https://github.com/simonamanuel/STM32-Industrial-Controller">Open GitHub Repository ↗</a><a class="button" href="index.html#electronics-embedded">Back to Electronics Projects</a></div>
+  </div>
+</section>
+</main>
+<footer><div class="container small">Simon Amanuel · Engineering Portfolio</div></footer>
+</body>
+</html>
